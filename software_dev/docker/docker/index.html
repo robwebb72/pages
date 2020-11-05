@@ -1,0 +1,1863 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.2">
+    
+    
+      
+        <title>Docker - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.19190aaf.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.24b84193.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#docker" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="My Docs" class="md-header-nav__button md-logo" aria-label="My Docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            My Docs
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Docker
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      Welcome to the Knowledgarium
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      It
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="It" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        It
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../it/mac_setup/" class="md-nav__link">
+      Setting up a MacBook Pro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Linux
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Linux" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Linux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../it/linux/bash_tips/" class="md-nav__link">
+      bash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../it/linux/terminal/" class="md-nav__link">
+      Linux Terminal
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Software dev
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Software dev" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Software dev
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      3d
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="3d" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        3d
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3d/3d_geometry/" class="md-nav__link">
+      Handy Geometry for 3D Rendering
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      C#
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="C#" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon"></span>
+        C#
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C%23/arrays/" class="md-nav__link">
+      C# Arrays
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C%23/dependency_inversion/" class="md-nav__link">
+      C# Dependency Inversion - Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C%23/dictionaries/" class="md-nav__link">
+      C# Dictionaries
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C%23/ienumerable/" class="md-nav__link">
+      C# IEnumerable
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C%23/inheritance/" class="md-nav__link">
+      C# Inheritance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C%23/lists/" class="md-nav__link">
+      C# Lists
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C%23/objects_and_classes/" class="md-nav__link">
+      C# Misc Stuff
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C%23/operators/" class="md-nav__link">
+      C# Operators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C%23/parameters/" class="md-nav__link">
+      C# Parameters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C%23/properties/" class="md-nav__link">
+      C# Properties
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C%23/strings/" class="md-nav__link">
+      C# Strings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C%23/various/" class="md-nav__link">
+      C# Various Bits and Pieces
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-13" type="checkbox" id="nav-3-2-13">
+    
+    <label class="md-nav__link" for="nav-3-2-13">
+      Linq
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Linq" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-2-13">
+        <span class="md-nav__icon md-icon"></span>
+        Linq
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C%23/linq/Scott%27s%20Linq%20Blog/" class="md-nav__link">
+      Learning from ScottGu's Linq Blog
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Design Patterns
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Design Patterns" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        <span class="md-nav__icon md-icon"></span>
+        Design Patterns
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Design%20Patterns/strategy/" class="md-nav__link">
+      The Strategy Pattern
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      C++
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="C++" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        <span class="md-nav__icon md-icon"></span>
+        C++
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%2B%2B/cave_of_prog/" class="md-nav__link">
+      C++ CoP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%2B%2B/cpp_maps/" class="md-nav__link">
+      C++ Maps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%2B%2B/cpp_pointers/" class="md-nav__link">
+      C++ Pointers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%2B%2B/cpp_polymorphism/" class="md-nav__link">
+      C++ Polymorphism
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%2B%2B/cpp_vectors/" class="md-nav__link">
+      C++ Vectors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%2B%2B/design_patterns/" class="md-nav__link">
+      C++ Design Patterns
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%2B%2B/quick_notes/" class="md-nav__link">
+      C++ Quick Notes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4-8" type="checkbox" id="nav-3-4-8">
+    
+    <label class="md-nav__link" for="nav-3-4-8">
+      C++ Crash Course
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="C++ Crash Course" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-4-8">
+        <span class="md-nav__icon md-icon"></span>
+        C++ Crash Course
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%2B%2B/C%2B%2B%20Crash%20Course/crash_course_ch02/" class="md-nav__link">
+      C++ Crash Course - Ch 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%2B%2B/C%2B%2B%20Crash%20Course/crash_course_ch03/" class="md-nav__link">
+      C++ Crash Course - Ch 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%2B%2B/C%2B%2B%20Crash%20Course/crash_course_ch04/" class="md-nav__link">
+      C++ Crash Course - Ch 4
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5" checked>
+    
+    <label class="md-nav__link" for="nav-3-5">
+      Docker
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Docker" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        <span class="md-nav__icon md-icon"></span>
+        Docker
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Docker
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Docker
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#useful-commands" class="md-nav__link">
+    Useful commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    Images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containers" class="md-nav__link">
+    Containers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-flow" class="md-nav__link">
+    Docker Flow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit" class="md-nav__link">
+    Commit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    Run
+  </a>
+  
+    <nav class="md-nav" aria-label="Run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detaching" class="md-nav__link">
+    Detaching
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listing-containers" class="md-nav__link">
+    Listing Containers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-containers" class="md-nav__link">
+    Managing Containers
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing Containers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constraining-resources" class="md-nav__link">
+    Constraining resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lessons-from-the-field" class="md-nav__link">
+    Lessons from the field
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#volumes" class="md-nav__link">
+    Volumes
+  </a>
+  
+    <nav class="md-nav" aria-label="Volumes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sharing-data-with-host" class="md-nav__link">
+    Sharing Data with Host
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharing-between-containers" class="md-nav__link">
+    Sharing between containers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-registries" class="md-nav__link">
+    Docker registries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-containers" class="md-nav__link">
+    Connecting Containers
+  </a>
+  
+    <nav class="md-nav" aria-label="Connecting Containers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#legacy-linking" class="md-nav__link">
+    Legacy Linking
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip-address-binding" class="md-nav__link">
+    IP address Binding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#private-container-network" class="md-nav__link">
+    Private Container Network
+  </a>
+  
+    <nav class="md-nav" aria-label="Private Container Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exposing-ports" class="md-nav__link">
+    Exposing Ports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exposing-ports-dynamically" class="md-nav__link">
+    Exposing Ports Dynamically
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp-ports" class="md-nav__link">
+    UDP Ports
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-between-containers" class="md-nav__link">
+    Connecting between containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linking-directly" class="md-nav__link">
+    Linking Directly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-linking" class="md-nav__link">
+    Dynamic Linking
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-6" type="checkbox" id="nav-3-6">
+    
+    <label class="md-nav__link" for="nav-3-6">
+      Lisp
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Lisp" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-6">
+        <span class="md-nav__icon md-icon"></span>
+        Lisp
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lisp/bits_of_lisp_01_eval_model/" class="md-nav__link">
+      The Lisp Evaluation Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lisp/land-of-lisp-ch01-ch02/" class="md-nav__link">
+      Land of Lisp - Ch1 & Ch2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lisp/land-of-lisp-ch03/" class="md-nav__link">
+      Land of Lisp - Ch 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lisp/land-of-lisp-ch04/" class="md-nav__link">
+      Land of Lisp - Ch 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lisp/land-of-lisp-ch05/" class="md-nav__link">
+      Land of Lisp - Ch 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lisp/land-of-lisp-ch06.5/" class="md-nav__link">
+      Land of Lisp Learning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lisp/land-of-lisp-keywords/" class="md-nav__link">
+      Land of Lisp
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7">
+    
+    <label class="md-nav__link" for="nav-3-7">
+      Maven
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Maven" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-7">
+        <span class="md-nav__icon md-icon"></span>
+        Maven
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maven/01-java-recap/" class="md-nav__link">
+      Maven - Recap on Java Compilation and Execution
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maven/02-maven-basics/" class="md-nav__link">
+      Starting with Maven
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maven/06-maven-plugins/" class="md-nav__link">
+      Maven Plugins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maven/maven-build-lifecycles/" class="md-nav__link">
+      Maven Build Lifecycles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maven/misc_notes/" class="md-nav__link">
+      Misc Notes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-8" type="checkbox" id="nav-3-8">
+    
+    <label class="md-nav__link" for="nav-3-8">
+      Python
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Python" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-8">
+        <span class="md-nav__icon md-icon"></span>
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/python/" class="md-nav__link">
+      Python Learning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-9" type="checkbox" id="nav-3-9">
+    
+    <label class="md-nav__link" for="nav-3-9">
+      Tools
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Tools" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-9">
+        <span class="md-nav__icon md-icon"></span>
+        Tools
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tools/vi_notes/" class="md-nav__link">
+      VIM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tools/vs_code_learning/" class="md-nav__link">
+      VS Code
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#useful-commands" class="md-nav__link">
+    Useful commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    Images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containers" class="md-nav__link">
+    Containers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-flow" class="md-nav__link">
+    Docker Flow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit" class="md-nav__link">
+    Commit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    Run
+  </a>
+  
+    <nav class="md-nav" aria-label="Run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detaching" class="md-nav__link">
+    Detaching
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listing-containers" class="md-nav__link">
+    Listing Containers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-containers" class="md-nav__link">
+    Managing Containers
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing Containers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constraining-resources" class="md-nav__link">
+    Constraining resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lessons-from-the-field" class="md-nav__link">
+    Lessons from the field
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#volumes" class="md-nav__link">
+    Volumes
+  </a>
+  
+    <nav class="md-nav" aria-label="Volumes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sharing-data-with-host" class="md-nav__link">
+    Sharing Data with Host
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharing-between-containers" class="md-nav__link">
+    Sharing between containers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-registries" class="md-nav__link">
+    Docker registries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-containers" class="md-nav__link">
+    Connecting Containers
+  </a>
+  
+    <nav class="md-nav" aria-label="Connecting Containers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#legacy-linking" class="md-nav__link">
+    Legacy Linking
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip-address-binding" class="md-nav__link">
+    IP address Binding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#private-container-network" class="md-nav__link">
+    Private Container Network
+  </a>
+  
+    <nav class="md-nav" aria-label="Private Container Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exposing-ports" class="md-nav__link">
+    Exposing Ports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exposing-ports-dynamically" class="md-nav__link">
+    Exposing Ports Dynamically
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp-ports" class="md-nav__link">
+    UDP Ports
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-between-containers" class="md-nav__link">
+    Connecting between containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linking-directly" class="md-nav__link">
+    Linking Directly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-linking" class="md-nav__link">
+    Dynamic Linking
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="docker">Docker</h1>
+<p>(Handy hint - finding the versions of ubuntu you’re using:-  cat /etc/lsb-release)</p>
+<h2 id="useful-commands">Useful commands</h2>
+<p>docker info
+docker version - provides more info than docker --version</p>
+<h2 id="images">Images</h2>
+<p>docker images - lists all the docker images
+docker rm \&lt;image id> - removes the image</p>
+<p>Name structure:- registry.example.com:port/organisation/image-name:version-tag
+Normally you can leave out the “registry.example.com:port”
+docker pull -&gt; useful to pull images down ahead of time so you ca work on them when off line.</p>
+<p>Images can accumulate quickly</p>
+<pre><code class="language-shell">docker rmi &lt;image-name:tag&gt; - removes the image
+Can also use docker rmi &lt;image id&gt;
+</code></pre>
+<h2 id="containers">Containers</h2>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>docker ps</td>
+<td>list containers (running only)</td>
+</tr>
+<tr>
+<td>docker ps -a</td>
+<td>list containers (all)</td>
+</tr>
+<tr>
+<td>docker start \&lt;containerID></td>
+<td></td>
+</tr>
+<tr>
+<td>docker stop \&lt;containerID></td>
+<td></td>
+</tr>
+<tr>
+<td>docker restart \&lt;containerID></td>
+<td></td>
+</tr>
+<tr>
+<td>docker container start \&lt;containerID></td>
+<td></td>
+</tr>
+<tr>
+<td>docker container stop \&lt;containerID></td>
+<td></td>
+</tr>
+<tr>
+<td>docker container restart \&lt;containerID></td>
+<td></td>
+</tr>
+<tr>
+<td><em>docker container ls</em> same as <em>docker ps</em></td>
+<td></td>
+</tr>
+<tr>
+<td><em>docker container ls -a</em> same as <em>docker ps -a</em></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="docker-flow">Docker Flow</h2>
+<p><img alt="docker flow" src="../images/docker_flow.png" /></p>
+<h2 id="commit">Commit</h2>
+<pre><code class="language-shell">docker commit &lt;container name&gt;
+Docker tag &lt;sha 256 code from commit&gt; &lt;new image name&gt;
+Docker commit &lt;new image name&gt;:&lt;tags&gt;. (If any tags available)
+</code></pre>
+<h2 id="run">Run</h2>
+<pre><code class="language-shell">docker run -ti ubuntu:latest bash
+</code></pre>
+<p>-ti - terminal interactive
+Bash - process to run inside container
+:latest version of ubuntu to run</p>
+<pre><code class="language-shell">docker run -ti ubuntu bash -c “sleep 3; echo all done”
+</code></pre>
+<p>Omitting the tag means docker will run the latest version
+-c means run a command, followed by the commands to run in the process</p>
+<pre><code class="language-shell">docker run —rm
+</code></pre>
+<p>—rm remove the container after it exits</p>
+<pre><code class="language-shell">docker exec -ti &lt;container name&gt; bash
+</code></pre>
+<p>Executes another process in container, useful for debugging but cannot change ports or volumes</p>
+<h3 id="detaching">Detaching</h3>
+<pre><code class="language-shell">docker run -d
+</code></pre>
+<p>Runs in detached mode</p>
+<p>Or ^ P ^ Q will detach the currently running container</p>
+<pre><code class="language-shell">docker attach &lt;container name&gt; - reattaches the container to the terminal
+</code></pre>
+<h2 id="listing-containers">Listing Containers</h2>
+<pre><code class="language-shell">docker ps - show running containers
+docker ps -a  - show all containers
+docker ps -l   - show last container
+
+docker ps —format = $FORMAT
+
+$FORMAT = \nID\t{{.ID}}\nIMAGE\t{{.Image}}\nCREATED\t{{.Running}}\nCOMMAND\t{{.Running}}\nSTATUS\t{{.Status}}\nPORT\t{{.Ports}}\nNAMES\t{{.Names}}\n
+</code></pre>
+<h2 id="managing-containers">Managing Containers</h2>
+<pre><code class="language-shell">docker logs
+</code></pre>
+<p>output of container (don’t let output get too large -&gt; impacts on performance</p>
+<h3 id="constraining-resources">Constraining resources</h3>
+<p>Memory:</p>
+<pre><code class="language-shell">docker run —memory &lt;max allowed memory&gt; &lt;image name&gt; &lt;command&gt;
+</code></pre>
+<p>CPU:</p>
+<pre><code class="language-shell">docker run —cpu-shares &lt;relative to the containers&gt;
+docker run —cpu-quota &lt;limit in general&gt;
+</code></pre>
+<h3 id="lessons-from-the-field">Lessons from the field</h3>
+<ul>
+<li>Don’t let containers fetch dependencies at the start (if a dependency is removed, it breaks your container) - include the dependency inside your container</li>
+<li>Don’t leave important stuff inside unnamed, stopped containers</li>
+</ul>
+<h2 id="volumes">Volumes</h2>
+<p>These are virtual discs to shared and store data (between hosts and containers)
+There are two main types</p>
+<ul>
+<li>persistent</li>
+<li>ephemeral (i.e. temporary)</li>
+</ul>
+<p>They are NOT part of the images.</p>
+<h3 id="sharing-data-with-host">Sharing Data with Host</h3>
+<p>Works like VM “shared folders”</p>
+<pre><code class="language-shell">docker run -ti -v /home/user/folder:/shared-folder ubuntu bash
+</code></pre>
+<p><strong>/home/user/folder</strong> is the file path on the host
+<strong>/shared-folder</strong> is the path in the container</p>
+<p>This can also be done with files</p>
+<pre><code class="language-shell">-v /home/user/readme.txt:/readme.txt
+</code></pre>
+<p><strong>Note:</strong> the file must exist before the container is run, otherwise its assumed to be a folder.</p>
+<h3 id="sharing-between-containers">Sharing between containers</h3>
+<p>Start up first container with:</p>
+<pre><code class="language-shell">docker run -v /shared-data …. —name my-container
+</code></pre>
+<p>( -v /shared-data means that the folder only exists in the container)</p>
+<p>Start up the other container:</p>
+<pre><code class="language-shell">docker run —volumes-from my-container …
+</code></pre>
+<p>Now both containers have a <strong>/shared-data</strong> folder shared between them.  <strong>/shared-data</strong> exists as long as ONE container is sharing it.</p>
+<h2 id="docker-registries">Docker registries</h2>
+<ul>
+<li>Registries manage and distribue images</li>
+<li>The docker company offers these for free</li>
+<li>Can also run your own</li>
+</ul>
+<pre><code class="language-shell">docker search &lt;name&gt; - search for image (or use hub.docker.com)
+docker login -&gt; log in to docker hub, creates token on local machine
+docker pull debian:sid
+docker tag debian:sid my-docker-id/new-image-name:v23
+docker push my-docker-id/new-image-name:v23
+</code></pre>
+<p>Things to be aware of with registries</p>
+<ul>
+<li>DON’T push images containing passwords</li>
+<li>Clean up your images regularly</li>
+<li>Be aware of how much you are trusting containers that you fetch</li>
+</ul>
+<h2 id="connecting-containers">Connecting Containers</h2>
+<h3 id="legacy-linking">Legacy Linking</h3>
+<p>Set environment variables inside linking container for host and port -&gt; old (legacy) system</p>
+<h3 id="ip-address-binding">IP address Binding</h3>
+<p>Services that listen ‘locally’ by default are only available in the container.  To allow connections, you need to use the ‘bind address 0.0.0.0’ inside the container.</p>
+<p>Use docker to limit access to the host only, e.g.</p>
+<pre><code class="language-shell">docker run -p 127.0.0.1:1234:1234/tcp
+</code></pre>
+<p>127.0.0.1 -&gt; only from the host</p>
+<h3 id="private-container-network">Private Container Network</h3>
+<p>Can group containers into 'private' networks.
+Can explicitly chose who can connect to who.  Done by exposing ports and linking containers - docker helps you find other exposed ports with Compose services</p>
+<h4 id="exposing-ports">Exposing Ports</h4>
+<p>can be done inside and outside the container</p>
+<pre><code class="language-shell">docker run -p outside(host):inside(container)
+</code></pre>
+<p>e.g.</p>
+<pre><code class="language-shell">docker run -p 40000:50000 -p 40001:50001 ubuntu:14.04
+</code></pre>
+<p>ports 40000 and 40001 are on the host (outside)
+ports 50000 and 50001 are in the container (inside)</p>
+<h4 id="exposing-ports-dynamically">Exposing Ports Dynamically</h4>
+<p>Example</p>
+<pre><code class="language-shell">docker run -port 50000 -port 50001 --name echo-server ubuntu:14.04
+</code></pre>
+<p>ports 50000 and 50001 are inside the container.  To find the host ports mapped to these, use:-</p>
+<pre><code class="language-shell">docker port echo-server
+</code></pre>
+<p>This should produce an output like:-</p>
+<pre><code class="language-shell">50000/tcp -&gt; 0.0.0.0:32770
+50001/tcp -&gt; 0.0.0.0:32771
+</code></pre>
+<p>Allows many containers running fixed ports - no need to worry about conflicts - often used with a service discovery program.</p>
+<h4 id="udp-ports">UDP Ports</h4>
+<pre><code class="language-shell">docker run -p 12345:12345/udp
+</code></pre>
+<p>Can also specify /tcp, but tcp is the default anyway.</p>
+<h3 id="connecting-between-containers">Connecting between containers</h3>
+<p><img alt="connecting containers" src="../images/connecting_containers.png" /></p>
+<h3 id="linking-directly">Linking Directly</h3>
+<ul>
+<li>generally used with orchestration</li>
+<li>links all ports but only one way</li>
+<li>only for services that cannot be run on different machines</li>
+<li>e.g. a service and health check that monitors it</li>
+<li>services and its db?  Probably NOT a good idea</li>
+</ul>
+<p>e.g.</p>
+<pre><code class="language-shell">docker run --rm -ti --link [server]
+</code></pre>
+<p><em>--link [server]</em> - [server] is the name of the container to link to.  Can then use this name to connect to server inside docker</p>
+<h3 id="dynamic-linking">Dynamic Linking</h3>
+<ul>
+<li>Docker has private networks</li>
+<li>private networks have built in name servers that fix links</li>
+<li><strong>MUST</strong> create the networks in advance</li>
+</ul>
+<pre><code class="language-shell">docker network create &lt;network name&gt;
+</code></pre>
+<p>This allows the link to be broken and recreated - e.g. if a server container is stopped, it can then be restarted and the namespace server with recreate the link.</p>
+<p>For example</p>
+<pre><code class="language-shell">docker network create my_network
+docker run --net=my_network --name server ubuntu bash
+docker run --link server --net=my_network --client ubuntu bash
+</code></pre>
+<p>Commands</p>
+<pre><code class="language-shell">docker network create &lt;name&gt;
+docker network ls
+docker network prune
+docker network rm &lt;name&gt;
+docker network connect [OPTIONS] &lt;network&gt; &lt;container&gt;
+docker network disconnect -f &lt;network&gt; &lt;container&gt;
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../c%2B%2B/C%2B%2B%20Crash%20Course/crash_course_ch04/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                C++ Crash Course - Ch 4
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../lisp/bits_of_lisp_01_eval_model/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                The Lisp Evaluation Model
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c1ccee15.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

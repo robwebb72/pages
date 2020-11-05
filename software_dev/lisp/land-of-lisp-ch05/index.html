@@ -1,168 +1,94 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  
-  <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>Land of Lisp Learning - My Docs</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Land of Lisp - Ch 5 - My Docs</title>
+    <link href="../../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
 
-  <link rel="stylesheet" href="../../../css/theme.css" />
-  <link rel="stylesheet" href="../../../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Land of Lisp Learning";
-    var mkdocs_page_input_path = "software_dev\\lisp\\land-of-lisp-ch05.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
+    <script src="../../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Land of Lisp - Ch 5", url: "#_top", children: [
+              {title: "assocation lists", url: "#assocation-lists" },
+              {title: "quasi-quoting", url: "#quasi-quoting" },
+              {title: "append", url: "#append" },
+              {title: "Higher Order Functions", url: "#higher-order-functions" },
+              {title: "find", url: "#find" },
+              {title: "push", url: "#push" },
+              {title: "other list handling functions", url: "#other-list-handling-functions" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../../js/base.js"></script> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
 
-  <div class="wy-grid-for-nav">
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
 
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-        <a href="../../.." class="icon icon-home"> My Docs</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+    
+      
+    
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../..">Welcome to MkDocs</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Software dev</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Lisp</a>
-    <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../bits_of_lisp_01_eval_model/">Bits of Lisp</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../land-of-lisp-ch01-ch02/">Land of Lisp Learning Ch1 & Ch2</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../land-of-lisp-ch03/">Land of Lisp Learning - Chapter 3</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../land-of-lisp-ch04/">Land of Lisp Learning - Chapter 4</a>
-                </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Land of Lisp Learning</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#chapter-5">Chapter 5</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#assocation-lists">assocation lists</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#quasi-quoting">quasi-quoting</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#append">append</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#higher-order-functions">Higher Order Functions</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#find">find</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#push">push</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#other-list-handling-functions">other list handling functions</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../land-of-lisp-ch06.5/">Land of Lisp Learning</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../land-of-lisp-keywords/">Land of Lisp Learning</a>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Maven</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../maven/01-java-recap/">Maven - Recap on Java Compilation and Execution</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../maven/02-maven-basics/">Starting with Maven</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../maven/06-maven-plugins/">Maven Plugins</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../maven/maven-build-lifecycles/">Maven Build Lifecycles</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../maven/misc_notes/">Misc Notes</a>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Python</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../python/python/">Python Learning</a>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Tools</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../tools/vi_notes/">This is a journey into using VIM</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../tools/vs_code_learning/">VS Code</a>
-                </li>
-    </ul>
-                    </li>
-                </ul>
-      </div>
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../land-of-lisp-ch06.5/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../land-of-lisp-ch06.5/" class="btn btn-xs btn-link">
+        Land of Lisp Learning
+      </a>
     </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../../..">My Docs</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../../..">Docs</a> &raquo;</li>
     
-      
-        
-          <li>Lisp &raquo;</li>
-        
-      
-        
-          <li>Software dev &raquo;</li>
-        
-      
+    <div class="wm-article-nav">
+      <a href="../land-of-lisp-ch04/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../land-of-lisp-ch04/" class="btn btn-xs btn-link">
+        Land of Lisp - Ch 4
+      </a>
+    </div>
     
-    <li>Land of Lisp Learning</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  
-  <hr/>
-</div>
-          <div role="main">
-            <div class="section">
-              
-                <h1 id="land-of-lisp-learning">Land of Lisp Learning</h1>
-<h2 id="chapter-5">Chapter 5</h2>
-<h3 id="assocation-lists">assocation lists</h3>
+  </div>
+
+    
+
+    <h1 id="land-of-lisp-ch-5">Land of Lisp - Ch 5</h1>
+<h2 id="assocation-lists">assocation lists</h2>
 <pre><code class="language-lisp">(defparameter *my-list*
     '(  (key1 (value1a valueb valuec))
         (key2 (value2a valueb valuec))
@@ -177,26 +103,26 @@
 (key3 (value3a valueb valuec))
 ; only returns the first matching key
 </code></pre>
-<h3 id="quasi-quoting">quasi-quoting</h3>
+<h2 id="quasi-quoting">quasi-quoting</h2>
 <p>Can mark code in data if you use a <em>back-tick</em> and a <em>comma</em>.</p>
 <pre><code class="language-lisp">&gt; (defparameter *foo* &quot;foo&quot;)
 &gt; `(data data ,*foo* data ,*foo* data)  ; back-tick and commas
 
 (DATA DATA &quot;foo&quot; DATA &quot;foo&quot; DATA)
 </code></pre>
-<h3 id="append">append</h3>
+<h2 id="append">append</h2>
 <pre><code class="language-lisp">&gt; (append '(1 2 3) '(4 5 6))
 (1 2 3 4 5 6)
 
 &gt; (append '((1 2) (3 4)) '(5 6))
 ((1 2) (3 4) 5 6)
 </code></pre>
-<h3 id="higher-order-functions">Higher Order Functions</h3>
-<h4 id="mapcar">mapcar</h4>
+<h2 id="higher-order-functions">Higher Order Functions</h2>
+<h3 id="mapcar">mapcar</h3>
 <pre><code class="language-lisp">(mapcar #'function list)
 </code></pre>
 <p>applies function to each item of list and generates a new list</p>
-<h4 id="apply">apply</h4>
+<h3 id="apply">apply</h3>
 <p>takes items in a list and passes them as the parameters to function.</p>
 <pre><code class="language-lisp">&gt; (apply #'append '( (1 2) (3 4) (5) (6) ) )
 ; applies the append function to each list in the list to generate...
@@ -204,7 +130,7 @@
 ; which is the same as calling...
 &gt;(append '(1 2) '(3 4) '(5) '(6))
 </code></pre>
-<h3 id="find">find</h3>
+<h2 id="find">find</h2>
 <pre><code class="language-lisp">(defun walk (direction)
   (let
     ((next
@@ -223,66 +149,52 @@
 
 &gt; (find 'y '(5 . x) (3 . y) 7 . z)
 </code></pre>
-<h3 id="push">push</h3>
+<h2 id="push">push</h2>
 <p>adds an item to the front of a list (must be a named list?)</p>
 <pre><code class="language-lisp">&gt; (defparameter *nums* '(2 3))
 &gt; (push '1 *nums*)
 (1 2 3)
 </code></pre>
-<h3 id="other-list-handling-functions">other list handling functions</h3>
+<h2 id="other-list-handling-functions">other list handling functions</h2>
 <p><code>(remove-if #'predicate list)</code> - remove all items for which predicate is true
 <code>(remove-if-not #'predicate list)</code></p>
-              
-            </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+
+  <br>
+    
+
+    
+    
       
-        <a href="../land-of-lisp-ch06.5/" class="btn btn-neutral float-right" title="Land of Lisp Learning">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../land-of-lisp-ch04/" class="btn btn-neutral" title="Land of Lisp Learning - Chapter 4"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../land-of-lisp-ch06.5/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../land-of-lisp-ch06.5/" class="btn btn-xs btn-link">
+        Land of Lisp Learning
+      </a>
     </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
+    
+    <div class="wm-article-nav">
+      <a href="../land-of-lisp-ch04/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../land-of-lisp-ch04/" class="btn btn-xs btn-link">
+        Land of Lisp - Ch 4
+      </a>
+    </div>
     
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-      
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../land-of-lisp-ch04/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../land-of-lisp-ch06.5/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+    <br>
 </div>
-    <script>var base_url = '../../..';</script>
-    <script src="../../../js/theme.js" defer></script>
-      <script src="../../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
+
+<footer class="container-fluid wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
 
 </body>
 </html>

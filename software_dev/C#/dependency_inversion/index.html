@@ -1481,8 +1481,8 @@
     var wallart = new Carpet(sweeper, gallery);
     wallart.PerformActions();
 }
-
-public class Carpet {
+</code></pre>
+<pre><code class="language-csharp">public class Carpet {
     public List&lt;IAction&gt; Actions = new List&lt;IAction&gt;();
 
     public Carpet(params IAction[] possibleActions) {
@@ -1495,12 +1495,12 @@ public class Carpet {
         }
     }
 }
-
-public interface IAction {
+</code></pre>
+<pre><code class="language-csharp">public interface IAction {
     void PerformAction();
 }
-
-public class Sweepable : IAction {
+</code></pre>
+<pre><code class="language-csharp">public class Sweepable : IAction {
     public void Sweep() {
         // do stuff
     }

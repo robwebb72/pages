@@ -1721,16 +1721,44 @@ public class MyWindow : Window
 <p>The same as final classes</p>
 <hr />
 <h2 id="the-object-class">The Object Class</h2>
-<p>methods:</p>
-<ul>
-<li>Equals()</li>
-<li>GetHashCode()</li>
-<li>GetType()</li>
-<li>ToString()</li>
-<li>Finalize()  <em>// cleans up non memory resources</em></li>
-<li>MemberwiseClone()  <em>// creates copies of the object - should never be implemented by your type</em></li>
-<li>ReferenceEquals() <em>// two objects refer to same instance</em></li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>method</th>
+<th>notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equals()</td>
+<td></td>
+</tr>
+<tr>
+<td>GetHashCode()</td>
+<td></td>
+</tr>
+<tr>
+<td>GetType()</td>
+<td></td>
+</tr>
+<tr>
+<td>ToString()</td>
+<td></td>
+</tr>
+<tr>
+<td>Finalize()</td>
+<td><em>cleans up non memory resources</em></td>
+</tr>
+<tr>
+<td>MemberwiseClone()</td>
+<td><em>creates copies of the object - should never be implemented by your type</em></td>
+</tr>
+<tr>
+<td>ReferenceEquals()</td>
+<td><em>two objects refer to same instance</em></td>
+</tr>
+</tbody>
+</table>
 <pre><code class="language-csharp">// an example of overriding the ToString() method
 public override string ToString()
 {
@@ -1738,7 +1766,7 @@ public override string ToString()
 }
 </code></pre>
 <h2 id="boxing-unboxing">Boxing &amp; Unboxing</h2>
-<p><strong>Boxing</strong> is implicit
+<p><strong>Boxing</strong> is implicit<br />
 <strong>Unboxing</strong> is explicit</p>
 <pre><code class="language-csharp">int j = (int) o; // Unboxing - can throw InvalidCastException
 </code></pre>

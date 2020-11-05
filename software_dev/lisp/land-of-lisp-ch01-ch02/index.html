@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Land of Lisp Learning Ch1 & Ch2 - My Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Land of Lisp Learning Ch1 & Ch2";
+    var mkdocs_page_input_path = "software_dev\\lisp\\land-of-lisp-ch01-ch02.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> My Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Welcome to MkDocs</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Software dev</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Lisp</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../bits_of_lisp_01_eval_model/">Bits of Lisp</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Land of Lisp Learning Ch1 & Ch2</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#tldr">TL;DR</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#loading-source-files">Loading Source Files</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#global-vars">Global Vars</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#functions">Functions</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#local-variables">Local Variables</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#local-functions">Local Functions</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#chapter-1">Chapter 1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#chapter-2">Chapter 2</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#global-variables">Global Variables</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#defining-a-function">Defining a Function</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#defining-local-variables">Defining Local Variables</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#defining-local-functions">Defining Local Functions</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../land-of-lisp-ch03/">Land of Lisp Learning - Chapter 3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../land-of-lisp-ch04/">Land of Lisp Learning - Chapter 4</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../land-of-lisp-ch05/">Land of Lisp Learning</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../land-of-lisp-ch06.5/">Land of Lisp Learning</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../land-of-lisp-keywords/">Land of Lisp Learning</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Maven</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/01-java-recap/">Maven - Recap on Java Compilation and Execution</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/02-maven-basics/">Starting with Maven</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/06-maven-plugins/">Maven Plugins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/maven-build-lifecycles/">Maven Build Lifecycles</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/misc_notes/">Misc Notes</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Python</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/python/">Python Learning</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Tools</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../tools/vi_notes/">This is a journey into using VIM</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../tools/vs_code_learning/">VS Code</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">My Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Lisp &raquo;</li>
+        
+      
+        
+          <li>Software dev &raquo;</li>
+        
+      
+    
+    <li>Land of Lisp Learning Ch1 & Ch2</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="land-of-lisp-learning-ch1-ch2">Land of Lisp Learning Ch1 &amp; Ch2</h1>
+<h2 id="tldr">TL;DR</h2>
+<h3 id="loading-source-files">Loading Source Files</h3>
+<pre><code class="language-lisp">&gt; (load &quot;my_lisp_file.lisp&quot;)
+</code></pre>
+<pre><code class="language-bash">clisp &quot;my_lisp_file.lisp&quot;
+sbcl --load &quot;my_lisp_file.lisp&quot;
+</code></pre>
+<h3 id="global-vars">Global Vars</h3>
+<pre><code class="language-lisp">&gt; (defvar +golden_ratio+ 1.616)    ; immutable
+&gt; (defparameter *foo* &quot;foo&quot;)       ; mutable
+</code></pre>
+<h3 id="functions">Functions</h3>
+<pre><code class="language-lisp">(defun my_super_duper_function (...args...)
+  ... body of function ...)
+</code></pre>
+<h3 id="local-variables">Local Variables</h3>
+<pre><code class="language-lisp">(let ((var1 val1)
+      (var2 val2))
+  ...body...)
+
+(let* ((var1 val1)
+       (var2 var2))
+  ...body...)
+</code></pre>
+<h3 id="local-functions">Local Functions</h3>
+<pre><code class="language-lisp">; flet doesn't allow for local functions to call each other - no recursion
+(flet ((function_name (arguments)
+                      ...function body...))
+  ... body ...)
+
+; labels allows local functions to call each other (can recurse)
+(labels ((function_name (arguments)
+                        ... function body ...))
+  ... body ...)
+</code></pre>
+<hr />
+<h2 id="chapter-1">Chapter 1</h2>
+<p>Loading source files...</p>
+<pre><code class="language-lisp">&gt; (load &quot;my_lisp_file.lisp&quot;)
+</code></pre>
+<p>Or...</p>
+<pre><code class="language-bash">clisp &quot;my_lisp_file.lisp&quot;
+sbcl --load &quot;my_lisp_file.lisp&quot;
+</code></pre>
+<hr />
+<h2 id="chapter-2">Chapter 2</h2>
+<h3 id="global-variables">Global Variables</h3>
+<p>Defining a constant (convention is to surround name with + symbols)</p>
+<pre><code class="language-lisp">(defvar +golden_ratio+ 1.6180339)
+</code></pre>
+<p>Define a mutable global variable</p>
+<pre><code class="language-lisp">(defparameter *myval* 1)
+</code></pre>
+<p>"Earmuffs"
+The asterixes surrounding a variable are referred to as ear muffs.  It's a Lisp convention that these are used to identify global variables.  The asterixes are part of the name.</p>
+<h4 id="defvar-and-defparameter">defvar and defparameter</h4>
+<p><code>defvar</code> will only set a value once.  If <code>defvar</code> is used to change a variable's value again, the value will not change.  The value can be changed with calls to other functions (such as <code>defparameter</code>).  e.g.</p>
+<pre><code class="language-lisp">
+[1]&gt; (defvar +hello+ &quot;Hello&quot;)                ; define the value
++HELLO+
+[2]&gt; +hello+
+&quot;Hello&quot;
+
+[3]&gt; (defvar +hello+ &quot;Hello World&quot;)          ; defvar won't change value
++HELLO+
+[4]&gt; +hello+
+&quot;Hello&quot;
+
+[5]&gt; (defparameter +hello+ &quot;Hello World&quot;)    ; defparameter WILL change the value
++HELLO+
+[6]&gt; +hello+
+&quot;Hello World&quot;
+</code></pre>
+<p><strong>see also:</strong> <em><code>setf</code> and <code>setq</code></em></p>
+<h3 id="defining-a-function">Defining a Function</h3>
+<pre><code class="language-lisp">(defun func_name (arguments)
+   ... body ... )
+</code></pre>
+<h3 id="defining-local-variables">Defining Local Variables</h3>
+<pre><code class="language-lisp">(let
+    (variable declarations)
+    ..body... )
+</code></pre>
+<h3 id="defining-local-functions">Defining Local Functions</h3>
+<p>There are two ways to define a local function in Lisp <code>flet</code> and <code>labels</code>.
+<code>flet</code> - functions can only be called by the body
+<code>labels</code> allows local functions to call themselves and other local functions.</p>
+<p>It's a convention to default to the use to <code>flet</code> unless <code>labels</code> is required.  This way if you see <code>labels</code> in code you can expect functions to be calling each other and that recursion is likely.</p>
+<h4 id="flet">flet</h4>
+<pre><code class="language-lisp">(flet
+  ((function_name_1 (arguments) ... function 1 body...)
+   (function_name_1 (arguments) ... function 1 body...))
+  ... body ... )
+</code></pre>
+<p>e.g.</p>
+<pre><code class="language-lisp">(flet
+  ((f (n) (+ n 10))
+   (g (n) (- n 3)))
+  (g (f 5)) )
+</code></pre>
+<h4 id="labels">labels</h4>
+<pre><code class="language-lisp">(labels
+    ((function_name (arguments)
+        ... function body...))
+    ... body ... )
+</code></pre>
+<p>e.g.</p>
+<p>``` lisp
+(labels
+  ((a (n) (+ n 5))
+   (b (n) (+ (a n) 6)))
+  (b 10))</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../land-of-lisp-ch03/" class="btn btn-neutral float-right" title="Land of Lisp Learning - Chapter 3">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../bits_of_lisp_01_eval_model/" class="btn btn-neutral" title="Bits of Lisp"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../bits_of_lisp_01_eval_model/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../land-of-lisp-ch03/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Maven Build Lifecycles - My Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Maven Build Lifecycles";
+    var mkdocs_page_input_path = "software_dev\\maven\\maven-build-lifecycles.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> My Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Welcome to MkDocs</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Software dev</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="#">Lisp</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/bits_of_lisp_01_eval_model/">Bits of Lisp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch01-ch02/">Land of Lisp Learning Ch1 & Ch2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch03/">Land of Lisp Learning - Chapter 3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch04/">Land of Lisp Learning - Chapter 4</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch05/">Land of Lisp Learning</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch06.5/">Land of Lisp Learning</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-keywords/">Land of Lisp Learning</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Maven</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../01-java-recap/">Maven - Recap on Java Compilation and Execution</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../02-maven-basics/">Starting with Maven</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../06-maven-plugins/">Maven Plugins</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Maven Build Lifecycles</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#summary">Summary</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-predefined-life-cycles">3 Predefined Life Cycles</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#clean">Clean</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#default">Default</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#site">Site</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clean-lifecycle">Clean Lifecycle</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#default-lifecycle">Default Lifecycle</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#default-lifecycle-jar-packaging">Default Lifecycle JAR packaging</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#site-build-lifecycle">Site Build Lifecycle</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../misc_notes/">Misc Notes</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Python</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/python/">Python Learning</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Tools</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../tools/vi_notes/">This is a journey into using VIM</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../tools/vs_code_learning/">VS Code</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">My Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Maven &raquo;</li>
+        
+      
+        
+          <li>Software dev &raquo;</li>
+        
+      
+    
+    <li>Maven Build Lifecycles</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="maven-build-lifecycles">Maven Build Lifecycles</h1>
+<h2 id="summary">Summary</h2>
+<ul>
+<li>3 standard lifecycles in Maven (clean, default, site)</li>
+<li>each lifecycle made up of phases</li>
+<li>each phase may have 1 or more plugin goals</li>
+</ul>
+<p>Lifecycles and phases provide a framework to call plugin goals in a sequence.</p>
+<h2 id="3-predefined-life-cycles">3 Predefined Life Cycles</h2>
+<h3 id="clean">Clean</h3>
+<ul>
+<li>removes build artefacts</li>
+<li>defined with plugin bindings</li>
+</ul>
+<h3 id="default">Default</h3>
+<ul>
+<li>does the build and deployment of the project</li>
+<li>defined without plugin bindings</li>
+<li>bindings defined for each package</li>
+</ul>
+<h3 id="site">Site</h3>
+<ul>
+<li>creates web site for project</li>
+<li>defined with plugins</li>
+<li>least used in enterprise</li>
+<li>Maven’s websites are an example</li>
+</ul>
+<h2 id="clean-lifecycle">Clean Lifecycle</h2>
+<ul>
+<li><em>phase:</em> pre-clean</li>
+<li><em>phase:</em> clean - plugin binding -&gt; clean:clean goal</li>
+<li><em>phase:</em> post-clean</li>
+</ul>
+<h2 id="default-lifecycle">Default Lifecycle</h2>
+<p><strong>High level phase</strong> -&gt; phases</p>
+<p><strong>Validate</strong> -&gt; initialise, generate sources, process sources, generate resources, process resources
+<strong>Compile</strong> -&gt; process classes, generate test sources, process test sources, generate test resources, process test resources
+<strong>Test</strong> -&gt; test compile, process test class
+<strong>Package</strong> -&gt; prepare package
+<strong>Verify</strong> -&gt; pre integration test, integration test, post integration test
+<strong>Install</strong>
+<strong>Deploy</strong></p>
+<h2 id="default-lifecycle-jar-packaging">Default Lifecycle JAR packaging</h2>
+<p><strong>phase</strong> -&gt; plugin</p>
+<p><strong>process-resources</strong> -&gt; maven-resources-plugin:resources
+<strong>compile</strong> -&gt; maven-compiler-plugin:compile
+<strong>process-test-resources</strong> -&gt; maven-resources-plugin:testResources
+<strong>test-compile</strong> -&gt; maven-compiler-plugin:testCompile
+<strong>test</strong> -&gt; maven-surefire-plugin:test
+<strong>package</strong> -&gt; maven-jar-plugin:jar
+<strong>install</strong> -&gt; maven-install-plugin:install
+<strong>deploy</strong> -&gt; maven-deploy-plugin:deploy</p>
+<h2 id="site-build-lifecycle">Site Build Lifecycle</h2>
+<ul>
+<li><strong>phase:pre-site</strong> - no plugin</li>
+<li><strong>phase:site</strong> - maven-site-plugin:site</li>
+<li><strong>phase:post-site</strong> - no plugin</li>
+<li><strong>phase:site-deploy</strong> - maven-site-plugin:deploy</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../misc_notes/" class="btn btn-neutral float-right" title="Misc Notes">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../06-maven-plugins/" class="btn btn-neutral" title="Maven Plugins"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../06-maven-plugins/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../misc_notes/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

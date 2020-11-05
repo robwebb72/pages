@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Python Learning - My Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Python Learning";
+    var mkdocs_page_input_path = "software_dev\\python\\python.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> My Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Welcome to MkDocs</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Software dev</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="#">Lisp</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/bits_of_lisp_01_eval_model/">Bits of Lisp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch01-ch02/">Land of Lisp Learning Ch1 & Ch2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch03/">Land of Lisp Learning - Chapter 3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch04/">Land of Lisp Learning - Chapter 4</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch05/">Land of Lisp Learning</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch06.5/">Land of Lisp Learning</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-keywords/">Land of Lisp Learning</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Maven</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/01-java-recap/">Maven - Recap on Java Compilation and Execution</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/02-maven-basics/">Starting with Maven</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/06-maven-plugins/">Maven Plugins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/maven-build-lifecycles/">Maven Build Lifecycles</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/misc_notes/">Misc Notes</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Python</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Python Learning</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#built-in-functions">Built In Functions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#looping">Looping</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lists">Lists</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tuples">Tuples</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dictionary">Dictionary</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exceptions">Exceptions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#os-module">os module</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#portability-constants">Portability constants</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#basic-file-path-functions">Basic file &amp; path functions</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#shell-commands">Shell Commands</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#shell-commands-subprocess-module">Shell Commands - Subprocess module</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#impractical-python">Impractical Python</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#ch1-pylint">Ch1. pylint</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Tools</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../tools/vi_notes/">This is a journey into using VIM</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../tools/vs_code_learning/">VS Code</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">My Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Python &raquo;</li>
+        
+      
+        
+          <li>Software dev &raquo;</li>
+        
+      
+    
+    <li>Python Learning</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="python-learning">Python Learning</h1>
+<p>Raise to the power -&gt; **, e.g.</p>
+<pre><code class="language-python">2**8 = 256
+</code></pre>
+<h2 id="built-in-functions">Built In Functions</h2>
+<pre><code class="language-python">dir(__builtins__)  # shows all the builtin functions (and other stuff, eg., errors)
+dir(list) # shows all the methods that apply to lists
+</code></pre>
+<p>Common builtin functions</p>
+<ul>
+<li>type(object) -&gt; the object's type</li>
+<li>
+<p>str(object) -&gt; returns a nice string representation of the object</p>
+</li>
+<li>
+<p>len</p>
+</li>
+<li>int</li>
+<li>input</li>
+<li>chr</li>
+<li>abs</li>
+<li>bool</li>
+</ul>
+<h2 id="looping">Looping</h2>
+<pre><code class="language-python">for x in range(0:3):
+for x in range(0,8,2):
+</code></pre>
+<h2 id="lists">Lists</h2>
+<p>index, +ve index from start, -ve index from end (-1 = last item only)
+slicing [start:stop:step] (excludes upper bound - e.g. stop isn't included)
+valid options:-
+  [:] , [4:] , [:5] , [-3:] , [:-5]</p>
+<p>.remove(value) - removes the first instance of value in the list
+.pop(index) - removes the item at index location  </p>
+<p>[x for x in ...]  - list generator</p>
+<p>Can chain slices together e.g.
+  "Hello!"[-3][1] -&gt; returns 'o' [-3] returns "lo!" and then "lo!"[1] returns "o"</p>
+<h2 id="tuples">Tuples</h2>
+<p>Defined with round brackets.  Basically an immutable list (cannot add, update or remove items in a tuple)</p>
+<h2 id="dictionary">Dictionary</h2>
+<p>Matched key:value pairs
+{'a':1, 'b':2, 'c':3}</p>
+<p>dict.keys() -&gt; lists all the keys
+dict.values() -&gt; lists all the values
+dict[key] -&gt; returns the value associated with that key, throws an error if key doesn't exist
+dict.remove[key] -&gt; removes the k:v pair (also "del dict[k]" does the same thing)
+dict[key] = value -&gt; adds the k:v pair or updates the k:v pair if it already exists in the dict</p>
+<p>Zipping
+keys = ['a', 'b', 'c']
+vals = [1,2,3]
+mydict = dict(zip(keys,vals))
+mydict now equals -&gt; {'a':1, 'b':2, 'c':3}</p>
+<h2 id="exceptions">Exceptions</h2>
+<pre><code class="language-python">&gt;&gt;&gt; import traceback, sys
+&gt;&gt;&gt; def grail(x):
+...    raise TypeError('already got one')
+... &gt;&gt;&gt; try:
+...       grail('arthur')
+...    except:
+...       exc_info = sys.exc_info()
+...       print(exc_info[0])
+...       print(exc_info[1])
+...       traceback.print_tb(exc_info[2])
+...
+&lt;class 'TypeError'&gt;
+  already got one
+   File &quot;&lt;stdin&gt;&quot;, line 2, in &lt;module&gt;
+   File &quot;&lt;stdin&gt;&quot;, line 2, in grail
+</code></pre>
+<h2 id="os-module">os module</h2>
+<p>os.getpid()
+os.getcwd()
+os.chdir('/Users/Me')</p>
+<h3 id="portability-constants">Portability constants</h3>
+<p>os.pathsep, os.sep, os.pardir, os.curdir, os.linesep</p>
+<h3 id="basic-file-path-functions">Basic file &amp; path functions</h3>
+<p>os.path.isdir('path name')
+os.path.isfile('path name')
+os.path.exists
+os.path.getsize('path name')
+os.path.split('path name') # separates filename from its path
+os.path.dirname
+os.path.basename
+os.path.split.ext
+os.path.join - puts dirname and basename back together in the proper format</p>
+<p>os.path.normpath('path name') - returns the normal path (in case separators get mixed up, e.g. \ and /)</p>
+<p>os.path.abspath() - returns the absolute path e.g.
+os.path.abspath('.') - returns the same as os.path.cwd
+os.path.abspath('') - considered same as '.'
+os.path.abspath('..') - returns absolute path to parent folder</p>
+<h3 id="shell-commands">Shell Commands</h3>
+<p>os.system('shell command here')
+e.g. os.system('ls -la')</p>
+<p>Will wait for the command to return.  To run the command in it's own process use:-</p>
+<ul>
+<li>(windows) os.system('run shell command')</li>
+<li>(linux/mac) os.system("shell command &amp;')</li>
+</ul>
+<p>os.popen('shell command')
+takes the output of the shell command and runs it through a pipe or io stream
+e.g. print(os.popen('ls -la').read())</p>
+<pre><code class="language-python">text = os.popen('ls -la').read()  // takes the output from 'ls -la' and passes it to text
+</code></pre>
+<h3 id="shell-commands-subprocess-module">Shell Commands - Subprocess module</h3>
+<p>import subprocess</p>
+<p>subprocess.call('python helloworld.py)  # like os.system, but returns the return code as well</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>pipe = subprocess.Popen('python helloshell.py', stdout=subprocess.PIPE)
+pipe.communicate()
+(b'The Meaning of Life\r\n', None)
+pipe.returncode
+0</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<hr />
+<h2 id="impractical-python">Impractical Python</h2>
+<h3 id="ch1-pylint">Ch1. pylint</h3>
+<pre><code class="language-bash">pip install pylint
+
+pylint filename.py  # linux
+
+python -m pylint filename.py  #Windows
+pylint -rn # no reports
+pylint --max_line_length=79
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../tools/vi_notes/" class="btn btn-neutral float-right" title="This is a journey into using VIM">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../maven/misc_notes/" class="btn btn-neutral" title="Misc Notes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../maven/misc_notes/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../tools/vi_notes/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

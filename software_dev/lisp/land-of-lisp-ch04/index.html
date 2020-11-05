@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Land of Lisp Learning - Chapter 4 - My Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Land of Lisp Learning - Chapter 4";
+    var mkdocs_page_input_path = "software_dev\\lisp\\land-of-lisp-ch04.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> My Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Welcome to MkDocs</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Software dev</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Lisp</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../bits_of_lisp_01_eval_model/">Bits of Lisp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../land-of-lisp-ch01-ch02/">Land of Lisp Learning Ch1 & Ch2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../land-of-lisp-ch03/">Land of Lisp Learning - Chapter 3</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Land of Lisp Learning - Chapter 4</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#tldr">TL;DR</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#chapter-4-conditions">Chapter 4 (conditions)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#empty-equals-false">Empty Equals False</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#if">if</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#when-and-unless">when and unless</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cond">cond</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#case">case</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#conditionals-and-and-or">conditionals "and" and "or"</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#comparisons">comparisons</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../land-of-lisp-ch05/">Land of Lisp Learning</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../land-of-lisp-ch06.5/">Land of Lisp Learning</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../land-of-lisp-keywords/">Land of Lisp Learning</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Maven</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/01-java-recap/">Maven - Recap on Java Compilation and Execution</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/02-maven-basics/">Starting with Maven</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/06-maven-plugins/">Maven Plugins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/maven-build-lifecycles/">Maven Build Lifecycles</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/misc_notes/">Misc Notes</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Python</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/python/">Python Learning</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Tools</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../tools/vi_notes/">This is a journey into using VIM</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../tools/vs_code_learning/">VS Code</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">My Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Lisp &raquo;</li>
+        
+      
+        
+          <li>Software dev &raquo;</li>
+        
+      
+    
+    <li>Land of Lisp Learning - Chapter 4</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="land-of-lisp-learning-chapter-4">Land of Lisp Learning - Chapter 4</h1>
+<h2 id="tldr">TL;DR</h2>
+<ul>
+<li>Empty equals false - all of these are empty -&gt; <code>()</code> <code>'()</code> <code>nil</code> <code>'nil</code></li>
+<li>if - only one branch (then branch or else branch) evaluated depending on condition</li>
+<li>when and unless - implicit progn</li>
+<li>cond - classic branching in Lisp</li>
+</ul>
+<p><code>lisp
+  (cond
+      ((cond1) 'do-1a)
+      ((cond2) 'do-2a 'do-2b)
+      (t 'do-a 'do-b))</code></p>
+<ul>
+<li>case - branching by matching with eq (so cannot branch on strings)</li>
+</ul>
+<p><code>lisp
+  (case var1
+      ((val1) 'do-1a 'do-1b)
+      ((val2) 'do-2a)
+      (otherwise 'do-a 'do-b))</code></p>
+<ul>
+<li>
+<p>conditionals - <code>and</code> and <code>or</code> - shortcut Boolean evaluation</p>
+</li>
+<li>
+<p>comparisons</p>
+</li>
+<li><strong>rule of thumb</strong> - use <code>eq</code> when comparing symbols and <code>equal</code> when comparing everything else.</li>
+<li><code>eq</code>  - compares symbols only  (also seems to compare ints and chars [case sensitive])</li>
+<li><code>equal</code> - general comparison (symbols, chars, numbers, strings [case insensitive], lists, etc)</li>
+<li><code>eql</code> - compares symbols, chars and numbers (but only of same type) - chars are case insensitive</li>
+<li><code>equalp</code> - like <code>equal</code> but can compare between different number types (e.g. float and int)</li>
+<li><code>=</code> - comparsion between number types</li>
+<li><code>string-equal</code> (case insensitive)</li>
+<li><code>char-equal</code> (case insensitive)</li>
+</ul>
+<hr />
+<h2 id="chapter-4-conditions">Chapter 4 (conditions)</h2>
+<h3 id="empty-equals-false">Empty Equals False</h3>
+<p>The following are all false (scheme handles this differently)</p>
+<ul>
+<li>()</li>
+<li>'()</li>
+<li>nil</li>
+<li>'nil</li>
+</ul>
+<pre><code class="language-lisp">(defun my-len (list)
+    (if list
+        (1+ (my-len (cdr list)))
+        0))
+</code></pre>
+<h3 id="if">if</h3>
+<p>only one branch executed, lisp will not evaluate the branch not taken</p>
+<pre><code class="language-lisp">(if '(1)
+    'this-is-true
+    (/ 1 0))
+</code></pre>
+<p>Notes:</p>
+<ul>
+<li>can only execute 1 item in each branch</li>
+<li><code>(/ 1 0)</code> will never be evaluated so lisp won't throw it out</li>
+</ul>
+<h3 id="when-and-unless">when and unless</h3>
+<p>Executes multiple statements</p>
+<pre><code class="language-lisp">(when (condition-is-true)
+    'this-is-executed
+    'and-so-is-this )
+</code></pre>
+<pre><code class="language-lisp">(unless (condition-is-false)
+    'this-is-executed
+    'and-so-is-this )
+</code></pre>
+<h3 id="cond">cond</h3>
+<p>Classic way to do branching in Lisp. Considered by some to be the one true Lisp conditional (as it's been around since the Lisp Stone Age)</p>
+<pre><code class="language-lisp">(defvar *arch-enemy* nil)
+(defun pudding-eater (person)
+    (cond ((eq person 'henry)   (setf *arch-enemy* 'stupid-lisp-alien)
+                                '(curse you lisp alien - you ate my pudding))
+            ((eq person 'johnny)   (setf *arch-enemy* 'useless-old-johnny)
+                                '(i hope you choked on my pudding johnny))
+            (t      '(why you eatin' ma pudding stranger?))))
+</code></pre>
+<h3 id="case">case</h3>
+<pre><code class="language-lisp">(defun pudding-eater (person)
+    (case person
+        ((henry)   (setf *arch-enemy* 'stupid-lisp-alien)
+                    '(curse you lisp alien - you ate my pudding))
+        ((johnny)   (setf *arch-enemy* 'useless-old-johnny)
+                    '(i hope you choked on my pudding johnny))
+        (otherwise  '(why you eatin' ma pudding stranger?))))
+</code></pre>
+<p>Note: <strong>case</strong> uses <em>eq</em> for comparison, so cannot be used to branch on string values.</p>
+<h3 id="conditionals-and-and-or">conditionals "and" and "or"</h3>
+<pre><code class="language-lisp">&gt; (and (oddp 5)(oddp 7)(oddp 9))
+&gt; (or (oddp 6)(oodp 4)(oddp 1))
+</code></pre>
+<p>Lisp will shortcut these statements (i.e. stop processing an or when it hits a true condition, stop processing an and condition when it hits a false).  Handy for a trick like this...</p>
+<pre><code class="language-lisp">(and *file-modified* (ask-user-about-saving) (save-file))
+</code></pre>
+<h3 id="comparisons">comparisons</h3>
+<ul>
+<li><strong>eq</strong> - compares symbols only. (also seems to compare ints and chars as well)</li>
+<li><strong>eql</strong> - compares symbols, chars and numbers (but only of same type, e.g. int -&gt; int, float -&gt; float), chars are case insensitive</li>
+<li><strong>equal</strong> - general comparison (symbols, chars, numbers, strings [case sensitive], lists, etc)</li>
+<li><strong>equalp</strong> - like <strong>equal</strong> but can compare between number types (e.g. int -&gt; float), strings are case insensitive</li>
+<li><strong>=</strong> - comparison between number types</li>
+<li><strong>string-equal</strong> - comparison between strings (case insensitive)</li>
+<li><strong>char-equal</strong> - comparison between chars (case insensitve)</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../land-of-lisp-ch05/" class="btn btn-neutral float-right" title="Land of Lisp Learning">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../land-of-lisp-ch03/" class="btn btn-neutral" title="Land of Lisp Learning - Chapter 3"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../land-of-lisp-ch03/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../land-of-lisp-ch05/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

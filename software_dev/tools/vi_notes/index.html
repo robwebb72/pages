@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>This is a journey into using VIM - My Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "This is a journey into using VIM";
+    var mkdocs_page_input_path = "software_dev\\tools\\vi_notes.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> My Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Welcome to MkDocs</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Software dev</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="#">Lisp</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/bits_of_lisp_01_eval_model/">Bits of Lisp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch01-ch02/">Land of Lisp Learning Ch1 & Ch2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch03/">Land of Lisp Learning - Chapter 3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch04/">Land of Lisp Learning - Chapter 4</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch05/">Land of Lisp Learning</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch06.5/">Land of Lisp Learning</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-keywords/">Land of Lisp Learning</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Maven</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/01-java-recap/">Maven - Recap on Java Compilation and Execution</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/02-maven-basics/">Starting with Maven</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/06-maven-plugins/">Maven Plugins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/maven-build-lifecycles/">Maven Build Lifecycles</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/misc_notes/">Misc Notes</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Python</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/python/">Python Learning</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Tools</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">This is a journey into using VIM</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#multiview">MultiView</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#commands">Commands</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../vs_code_learning/">VS Code</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">My Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Tools &raquo;</li>
+        
+      
+        
+          <li>Software dev &raquo;</li>
+        
+      
+    
+    <li>This is a journey into using VIM</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="this-is-a-journey-into-using-vim">This is a journey into using VIM</h1>
+<h2 id="multiview">MultiView</h2>
+<p>The commands for multi views are:-</p>
+<table>
+<thead>
+<tr>
+<th>action</th>
+<th>keystroke/seq</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>new split window (horizontal split)</td>
+<td>\<CTRL> + w , s</td>
+</tr>
+<tr>
+<td>new split window (vertical split)</td>
+<td>\<CTRL> + w , v</td>
+</tr>
+<tr>
+<td>close current split window (1)</td>
+<td>\<CTRL> + w , q</td>
+</tr>
+<tr>
+<td>move focus to window to the left</td>
+<td>\<CTRL> + w , h</td>
+</tr>
+<tr>
+<td>move focus to window to the right</td>
+<td>\<CTRL> + w , l</td>
+</tr>
+<tr>
+<td>move focus to window below</td>
+<td>\<CTRL> + w , j</td>
+</tr>
+<tr>
+<td>move focus to window above</td>
+<td>\<CTRL> + w , k</td>
+</tr>
+</tbody>
+</table>
+<p>(1) also closes the main window</p>
+<h2 id="commands">Commands</h2>
+<pre><code class="language-shell">:e \&lt;filename&gt;    - open file
+:Ex \&lt;directory&gt; - browse directory to find file (if no directory given, will browse current dir)
+</code></pre>
+<p>also works with [ and {</p>
+<p>vi keystrokes</p>
+<pre><code class="language-shell">yy - copies the current line
+P - pastes before this line.  (p - paste after this line)
+o - opens new line below cursor
+O - opens new line above cursor
+u - undo
+</code></pre>
+<p>Other keystrokes</p>
+<pre><code>diw - delete inner word
+di&quot; - delete everything between surrounding quote marks - also works with [ { &quot; ' (
+di( - delete everything between surrounding brackets
+ciw - change inner word
+ci( - change contents of parantheses
+D - delete to end of line
+dd - delete line
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../vs_code_learning/" class="btn btn-neutral float-right" title="VS Code">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../python/python/" class="btn btn-neutral" title="Python Learning"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../python/python/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../vs_code_learning/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

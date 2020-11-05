@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Starting with Maven - My Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Starting with Maven";
+    var mkdocs_page_input_path = "software_dev\\maven\\02-maven-basics.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> My Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Welcome to MkDocs</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Software dev</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="#">Lisp</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/bits_of_lisp_01_eval_model/">Bits of Lisp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch01-ch02/">Land of Lisp Learning Ch1 & Ch2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch03/">Land of Lisp Learning - Chapter 3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch04/">Land of Lisp Learning - Chapter 4</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch05/">Land of Lisp Learning</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch06.5/">Land of Lisp Learning</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-keywords/">Land of Lisp Learning</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Maven</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../01-java-recap/">Maven - Recap on Java Compilation and Execution</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Starting with Maven</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#maven-coordinates">Maven Coordinates</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#version">Version</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#maven-repositories">Maven Repositories</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-pom-file">The POM file</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#maven-dependencies">Maven Dependencies</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#transitive-dependency">Transitive Dependency</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dependency-managament">Dependency Managament</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dependency-mediation">Dependency Mediation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dependency-exclusion">Dependency Exclusion</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#optional-dependencies">Optional Dependencies</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dependency-scope">Dependency Scope</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#depdency-plug-in">Depdency Plug In</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#standard-directory-layout">Standard Directory Layout</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../06-maven-plugins/">Maven Plugins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../maven-build-lifecycles/">Maven Build Lifecycles</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../misc_notes/">Misc Notes</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Python</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/python/">Python Learning</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Tools</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../tools/vi_notes/">This is a journey into using VIM</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../tools/vs_code_learning/">VS Code</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">My Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Maven &raquo;</li>
+        
+      
+        
+          <li>Software dev &raquo;</li>
+        
+      
+    
+    <li>Starting with Maven</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="starting-with-maven">Starting with Maven</h1>
+<h2 id="maven-coordinates">Maven Coordinates</h2>
+<p>Identifies a location in a Maven Repository.</p>
+<ul>
+<li><em>groupId</em> - usually an organisation's domain in reverse (could also just be <em>'junit'</em>)</li>
+<li><em>artifactId</em> - project name</li>
+<li><em>version</em></li>
+</ul>
+<p>e.g.</p>
+<pre><code class="language-xml">&lt;groupId&gt;com.gwenci&lt;/groupId&gt;
+&lt;artifactId&gt;web_scraper&lt;/artifactId&gt;
+&lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+</code></pre>
+<p><strong>groupId</strong> and <strong>version</strong> can be inherited from a parent POM</p>
+<h3 id="version">Version</h3>
+<p>The version number is made up of a number of components.  e.g. <em>3.2.1-987-beta</em></p>
+<ul>
+<li><strong>major version</strong> e.g. <em>3</em></li>
+<li><strong>minor version</strong> e.g. <em>2</em></li>
+<li><strong>incremental version</strong> e.g. <em>1</em> (from patching)</li>
+<li><strong>build number</strong> e.g. <em>987</em> (from CI build)</li>
+<li><strong>String Qualifier</strong> e.g. <em>beta</em></li>
+</ul>
+<p>The most common in use is: <em>major.minor.incremental</em></p>
+<h4 id="snapshot-versions">Snapshot Versions</h4>
+<p>If the string qualifier is <strong>"SNAPSHOT"</strong> this tells Maven that this is a development version, and therefore not stable.  Maven will go and check for newer versions of this project instead.</p>
+<h2 id="maven-repositories">Maven Repositories</h2>
+<p>There are 3 main types.</p>
+<ul>
+<li><strong>local</strong> - hosted on your own machine, usually somewhere like: <em>~/.m2/...</em></li>
+<li><strong>central</strong> - the public repo hosted at https://repo1.maven.org/maven2</li>
+<li><strong>remote</strong> - other locations (private or public)</li>
+</ul>
+<p><img alt="" src="../images/project_and_repos.png" /></p>
+<p>Maven caches artifacts locally and will not go looking for them again (unless it's a SNAPSHOT)</p>
+<p>Useful web site: https://mvnrepository.com - shows available Maven central artifacts.</p>
+<h2 id="the-pom-file">The POM file</h2>
+<ul>
+<li>Stands for <strong>Project Object Model</strong></li>
+<li>describes the project</li>
+<li>must comply with maven-4.0.0.xsd (xsd - xml schema document)</li>
+<li>can inherit properties from parent POM</li>
+</ul>
+<p>Effective POM - this is the POM complete with inherited properties, can be displayed with:</p>
+<pre><code class="language-bash">mvn help:effective-pom
+</code></pre>
+<p>Can also be found in Intellij IDEA, here:
+<img alt="" src="../images/intellij_effective_pom.png" /></p>
+<h2 id="maven-dependencies">Maven Dependencies</h2>
+<p>A dependency is an artifact that your project relies on.  Typically a <strong>JAR</strong> or a <strong>POM</strong>.</p>
+<h3 id="transitive-dependency">Transitive Dependency</h3>
+<p>If <strong>your project</strong> needs <strong>artifact A</strong> and <strong>artifact A</strong> needs <strong>artifact B</strong>, transitively your project need <strong>artifact B</strong>.</p>
+<p>These transitive dependencies can be many layers deep, but they cannot be cyclic.</p>
+<h3 id="dependency-managament">Dependency Managament</h3>
+<p>Allows project authors to specify the version of the artifact they need.</p>
+<h3 id="dependency-mediation">Dependency Mediation</h3>
+<p>Determines the version of an artifact to use when multiple versions are encountered.</p>
+<pre><code>e.g.   project --&gt; A --&gt; D (v2.0)
+                   |
+                   +---&gt; B --&gt; D (v1.5)
+</code></pre>
+<p>In this case D (v2.0) would be used as it is the <strong>nearest definition</strong> in the dependency tree.</p>
+<p>This can lead to confusing situations, but most of the time it works.</p>
+<p>Usually gets the latest version but not all the time.</p>
+<h3 id="dependency-exclusion">Dependency Exclusion</h3>
+<p>Can exlude certain dependencies.</p>
+<h3 id="optional-dependencies">Optional Dependencies</h3>
+<p>Can mark dependencies as optional, so they aren't used downstream.</p>
+<h3 id="dependency-scope">Dependency Scope</h3>
+<ul>
+<li><strong>Compile</strong> - available on all classpaths, propogates to downstream projects. <em>(this dependency is include when your project is included as another project's dependency)</em></li>
+<li><strong>Provided</strong> - like <em>Compile</em> but expected to be provided by JDK/container at runtime.</li>
+<li><strong>Runtime</strong> - not required for compilation, but needed at runtime <em>(eg. data access for a database)</em></li>
+<li><strong>Test</strong> - on available on test classpath.  Not transitive (e.g. junit or mockito not required for projects that are dependent on your project)</li>
+<li><strong>System</strong> - similiar to provided</li>
+<li><strong>Import</strong> - import the dependencies of a POM</li>
+</ul>
+<h3 id="depdency-plug-in">Depdency Plug In</h3>
+<h4 id="useful-goals">Useful goals</h4>
+<ul>
+<li>mvn dependency:tree - <em>show dependecy tree, useful for resolving conflicts</em></li>
+<li>mvn dependency:go-offline - <em>resolve all and prepare to go offline</em></li>
+<li>mvn dependency:purge-local-repository - <em>handy troubleshooting step</em></li>
+<li>mvn dependency:sources - <em>get sources for all dependencies</em></li>
+</ul>
+<h2 id="standard-directory-layout">Standard Directory Layout</h2>
+<p><a href="https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html">Apache Maven's Guide to Standard Directory Layout</a></p>
+<p><img alt="" src="../images/maven_folders.png" /></p>
+<ul>
+<li><strong>main</strong> - contains source code organised by language (e.g. <em>java</em> and <em>kotlin</em>)</li>
+<li><strong>resources</strong> - contains files such as text files, xml files, properties files, images and so on</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../06-maven-plugins/" class="btn btn-neutral float-right" title="Maven Plugins">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../01-java-recap/" class="btn btn-neutral" title="Maven - Recap on Java Compilation and Execution"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../01-java-recap/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../06-maven-plugins/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

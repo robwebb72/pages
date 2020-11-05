@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>VS Code - My Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "VS Code";
+    var mkdocs_page_input_path = "software_dev\\tools\\vs_code_learning.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> My Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Welcome to MkDocs</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Software dev</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="#">Lisp</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/bits_of_lisp_01_eval_model/">Bits of Lisp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch01-ch02/">Land of Lisp Learning Ch1 & Ch2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch03/">Land of Lisp Learning - Chapter 3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch04/">Land of Lisp Learning - Chapter 4</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch05/">Land of Lisp Learning</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-ch06.5/">Land of Lisp Learning</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../lisp/land-of-lisp-keywords/">Land of Lisp Learning</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Maven</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/01-java-recap/">Maven - Recap on Java Compilation and Execution</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/02-maven-basics/">Starting with Maven</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/06-maven-plugins/">Maven Plugins</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/maven-build-lifecycles/">Maven Build Lifecycles</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maven/misc_notes/">Misc Notes</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Python</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../python/python/">Python Learning</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Tools</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../vi_notes/">This is a journey into using VIM</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">VS Code</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#shortcuts-general">Shortcuts - General</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#shortcuts-coding">Shortcuts - Coding</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#other-notes">Other Notes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#stuff-to-go-in-settingsjson">Stuff to go in settings.json</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#useful-command-palette-commands">Useful Command Palette Commands</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#extension-shortcuts">Extension Shortcuts</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#enhanced-markdown-preview">Enhanced Markdown Preview</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">My Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Tools &raquo;</li>
+        
+      
+        
+          <li>Software dev &raquo;</li>
+        
+      
+    
+    <li>VS Code</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="vs-code">VS Code</h1>
+<h2 id="shortcuts-general">Shortcuts - General</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Command Palette</td>
+<td>[CTRL] + Shift + P</td>
+</tr>
+<tr>
+<td>Command Palette (file search only)</td>
+<td>[CTRL] + P</td>
+</tr>
+<tr>
+<td>Refactor (across files)</td>
+<td>F2</td>
+</tr>
+<tr>
+<td>Open/Close Terminal</td>
+<td>[CTRL] + '</td>
+</tr>
+<tr>
+<td>Select Item at Cursor</td>
+<td>[Ctrl] + D</td>
+</tr>
+</tbody>
+</table>
+<h2 id="shortcuts-coding">Shortcuts - Coding</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Goto Definition</td>
+<td>F12</td>
+</tr>
+<tr>
+<td>Peek Definition</td>
+<td>[Alt] + F12</td>
+</tr>
+<tr>
+<td>Goto References</td>
+<td>[Shift] + F12</td>
+</tr>
+<tr>
+<td>Find All References</td>
+<td>[Alt] + [Shift] + F12</td>
+</tr>
+<tr>
+<td>Format Document</td>
+<td>[Alt] + [Shift] + F</td>
+</tr>
+<tr>
+<td>Organise Imports</td>
+<td>[Alt] + [Shift] + O</td>
+</tr>
+<tr>
+<td>Autocomplete</td>
+<td>[Ctrl] + Space</td>
+</tr>
+<tr>
+<td>Quick Fix Menu</td>
+<td>[Ctrl] + .</td>
+</tr>
+</tbody>
+</table>
+<p>Holding [Ctrl] or [Cmd] while hovering your mouse over your code will turn references, etc. into links you can click on.</p>
+<p>Note: On an NVidia Windows machine [Alt]+F12 is mapped in nVidia geForce so might need remapping.</p>
+<hr />
+<h2 id="other-notes">Other Notes</h2>
+<ul>
+<li>can use the command palette to open files</li>
+<li>can create snippets (by language) to insert common code (type 'snip' into command palette)</li>
+</ul>
+<p>When creating files, can specify folder as part of the filename <em>e.g. mydir/main.cpp</em> and code will create the folder if it doesn't already exist. (sometimes you need to refresh the project tree with the refresh icon to the right of it's name)</p>
+<p>Right click on an item gives open to go to the definition or peek at it.</p>
+<hr />
+<h2 id="stuff-to-go-in-settingsjson">Stuff to go in <em>settings.json</em></h2>
+<pre><code class="language-json">&quot;editor.renderIndentGuides&quot;: false,
+</code></pre>
+<p>You can automate the organising of imports, etc.. by editting the settings.json file and adding</p>
+<pre><code class="language-json">&quot;editor.codeActionsOnSave&quot;: {
+    &quot;source.organizeImports&quot;: true
+}
+</code></pre>
+<p>Turn off use of tabs when working with markdown...</p>
+<pre><code class="language-json">    &quot;[markdown]&quot;: {
+        &quot;editor.insertSpaces&quot;: false
+    }
+</code></pre>
+<h2 id="useful-command-palette-commands">Useful Command Palette Commands</h2>
+<ul>
+<li>Reload Window</li>
+</ul>
+<hr />
+<h2 id="extension-shortcuts">Extension Shortcuts</h2>
+<h3 id="enhanced-markdown-preview">Enhanced Markdown Preview</h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open Preview Pane</td>
+<td>[CTRL] + K, V</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../vi_notes/" class="btn btn-neutral" title="This is a journey into using VIM"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../vi_notes/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

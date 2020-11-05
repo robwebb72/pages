@@ -564,7 +564,7 @@
 
   <li class="md-nav__item">
     <a href="../../Coding/clean_code_01/" class="md-nav__link">
-      Clean Code Part 1
+      Clean Code, Part 1
     </a>
   </li>
 
@@ -929,6 +929,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/dockerfiles/" class="md-nav__link">
+      Dockerfile
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -961,8 +973,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../game_dev/polishing/" class="md-nav__link">
-      Notes on Game Development
+    <a href="../../game_dev/juicify/" class="md-nav__link">
+      Game Dev - Jucification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game_dev/misc/" class="md-nav__link">
+      Game Dev - Misc
     </a>
   </li>
 
@@ -974,14 +998,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-9-2" type="checkbox" id="nav-3-9-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-9-3" type="checkbox" id="nav-3-9-3">
     
-    <label class="md-nav__link" for="nav-3-9-2">
+    <label class="md-nav__link" for="nav-3-9-3">
       Engines
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Engines" data-md-level="3">
-      <label class="md-nav__title" for="nav-3-9-2">
+      <label class="md-nav__title" for="nav-3-9-3">
         <span class="md-nav__icon md-icon"></span>
         Engines
       </label>
@@ -1588,10 +1612,10 @@
                 
                 <h1 id="git-and-ssh">Git and SSH</h1>
 <h2 id="stage-1-get-a-key">Stage 1. Get a key</h2>
-<p>Check for existing keys first:-
+<p>Check for existing keys first:-<br />
 <code>ls -la ~/.ssh</code></p>
-<p>If no suitable keys exist, generate a new one:-
-<code>ssh-keygen -o -b 4096 -t rsa</code> (-o uses the newer OpenSSH format rather than the PEM format)
+<p>If no suitable keys exist, generate a new one:-<br />
+<code>ssh-keygen -o -b 4096 -t rsa</code> (-o uses the newer OpenSSH format rather than the PEM format)<br />
 <code>ssh-add &lt;id_file_name&gt;</code> (might need to start the ssh agent first with <code>eval $(ssh_agent -s)</code>)</p>
 <p>Now you have a suitable SSH key pair.</p>
 <h2 id="stage-2-add-public-key-to-the-git-service">Stage 2. Add public key to the git service</h2>

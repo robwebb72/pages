@@ -14,7 +14,7 @@
     
     
       
-        <title>Maven - Recap on Java Compilation and Execution - My Docs</title>
+        <title>Dockerfile - My Docs</title>
       
     
     
@@ -57,7 +57,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#maven-recap-on-java-compilation-and-execution" class="md-skip">
+        <a href="#dockerfile" class="md-skip">
           Skip to content
         </a>
       
@@ -87,7 +87,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Maven - Recap on Java Compilation and Execution
+              Dockerfile
             
           </span>
         </div>
@@ -900,10 +900,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-8" type="checkbox" id="nav-3-8">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-8" type="checkbox" id="nav-3-8" checked>
     
     <label class="md-nav__link" for="nav-3-8">
       Docker
@@ -923,7 +925,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../docker/docker/" class="md-nav__link">
+    <a href="../docker/" class="md-nav__link">
       Docker
     </a>
   </li>
@@ -933,11 +935,146 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../docker/dockerfiles/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Dockerfile
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Dockerfile
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#building-a-dockerfile" class="md-nav__link">
+    Building a dockerfile
+  </a>
+  
+    <nav class="md-nav" aria-label="Building a dockerfile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-most-basic-dockerfile" class="md-nav__link">
+    The most Basic Dockerfile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from" class="md-nav__link">
+    FROM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintainer" class="md-nav__link">
+    MAINTAINER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    RUN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add" class="md-nav__link">
+    ADD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy" class="md-nav__link">
+    COPY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#env" class="md-nav__link">
+    ENV
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrypoint" class="md-nav__link">
+    ENTRYPOINT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmd" class="md-nav__link">
+    CMD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expose" class="md-nav__link">
+    EXPOSE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#volume" class="md-nav__link">
+    VOLUME
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workdir" class="md-nav__link">
+    WORKDIR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    USER
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1272,12 +1409,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-13" type="checkbox" id="nav-3-13" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-13" type="checkbox" id="nav-3-13">
     
     <label class="md-nav__link" for="nav-3-13">
       Maven
@@ -1295,70 +1430,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Maven - Recap on Java Compilation and Execution
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../maven/01-java-recap/" class="md-nav__link">
       Maven - Recap on Java Compilation and Execution
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#creating-a-jar-file" class="md-nav__link">
-    Creating a jar file...
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-jar-file" class="md-nav__link">
-    Running jar file...
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#working-with-3rd-party-library" class="md-nav__link">
-    Working with 3rd party library
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-structure" class="md-nav__link">
-    File Structure
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1368,7 +1444,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../02-maven-basics/" class="md-nav__link">
+    <a href="../../maven/02-maven-basics/" class="md-nav__link">
       Starting with Maven
     </a>
   </li>
@@ -1380,7 +1456,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../06-maven-plugins/" class="md-nav__link">
+    <a href="../../maven/06-maven-plugins/" class="md-nav__link">
       Maven Plugins
     </a>
   </li>
@@ -1392,7 +1468,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../maven-build-lifecycles/" class="md-nav__link">
+    <a href="../../maven/maven-build-lifecycles/" class="md-nav__link">
       Maven Build Lifecycles
     </a>
   </li>
@@ -1404,7 +1480,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../misc_notes/" class="md-nav__link">
+    <a href="../../maven/misc_notes/" class="md-nav__link">
       Misc Notes
     </a>
   </li>
@@ -1544,30 +1620,106 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-a-jar-file" class="md-nav__link">
-    Creating a jar file...
+  <a href="#building-a-dockerfile" class="md-nav__link">
+    Building a dockerfile
+  </a>
+  
+    <nav class="md-nav" aria-label="Building a dockerfile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-most-basic-dockerfile" class="md-nav__link">
+    The most Basic Dockerfile
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#running-jar-file" class="md-nav__link">
-    Running jar file...
+        
+          <li class="md-nav__item">
+  <a href="#from" class="md-nav__link">
+    FROM
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#working-with-3rd-party-library" class="md-nav__link">
-    Working with 3rd party library
+        
+          <li class="md-nav__item">
+  <a href="#maintainer" class="md-nav__link">
+    MAINTAINER
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#file-structure" class="md-nav__link">
-    File Structure
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    RUN
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add" class="md-nav__link">
+    ADD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy" class="md-nav__link">
+    COPY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#env" class="md-nav__link">
+    ENV
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrypoint" class="md-nav__link">
+    ENTRYPOINT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmd" class="md-nav__link">
+    CMD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expose" class="md-nav__link">
+    EXPOSE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#volume" class="md-nav__link">
+    VOLUME
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workdir" class="md-nav__link">
+    WORKDIR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    USER
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1584,34 +1736,80 @@
               
                 
                 
-                <h1 id="maven-recap-on-java-compilation-and-execution">Maven - Recap on Java Compilation and Execution</h1>
-<p>(2019-12-02)</p>
-<h2 id="creating-a-jar-file">Creating a jar file...</h2>
-<pre><code class="language-bash">jar cf myjar.jar HelloWorld.class
+                <h1 id="dockerfile">Dockerfile</h1>
+<p>Small "program" to create an image.  Run with...</p>
+<p><code>docker build -t [name of result] .</code></p>
+<p>The . at the end is important! It specifies the location of the dockerfile</p>
+<p>Result will be added to your local registry</p>
+<p>Each step in the dockerfile produces a new image.  You don't want large files to span lines, or your image will be huge.  Best not to span lines with large images.</p>
+<p><strong>Caching</strong> - docker skips lines that have not changed since the last build, e.g. if your first line is "download latest file" it might not always run.</p>
+<p>Tip:-
+The parts that change the most belong at the end of the Dockerfile  </p>
+<p>Note: dockerfiles are not shell scripts - they look like shell scripts, but they aren't<br />
+Processes do not run across lines.  only moves onto the next line when the process for the previous line is finished.</p>
+<p>Environment variables you set will be set on the next line - if you use the ENV command, remember that each line is its own call to docker run</p>
+<h2 id="building-a-dockerfile">Building a dockerfile</h2>
+<h3 id="the-most-basic-dockerfile">The most Basic Dockerfile</h3>
+<pre><code class="language-dockerfile">FROM busybox
+RUN echo &quot;building simple docker image.&quot;
+CMD echo &quot;Hello Container&quot;
 </code></pre>
-<p>cf - create file</p>
-<h2 id="running-jar-file">Running jar file...</h2>
-<pre><code class="language-bash">java -cp myjar.jar HelloWorld
-</code></pre>
-<p>NB. need to add the jar to the classpath with <em>'-cp myjar.jar'</em></p>
-<h2 id="working-with-3rd-party-library">Working with 3rd party library</h2>
-<p>Compiling with 3rd party lib</p>
-<pre><code class="language-bash">javac -cp ./lib/* HelloWorld.java
-</code></pre>
-<p>Assuming the 3rd party library is in the <em>lib</em> folder.</p>
-<p>Running with a 3rd party lib</p>
-<pre><code class="language-bash">java -cp ./lib/*;./ HelloWorld
-</code></pre>
-<p>Note the separator in the classpath is either ; (on windows) or : (on Mac/Linux)</p>
-<h2 id="file-structure">File Structure</h2>
-<pre><code>src
- |
- +-- main
-      |
-      +-- java
-           |
-           +--&gt; source files go here!
-</code></pre>
+<p>Can build for an image already built from a previous dockerfile.  Thereby chaining dockerfiles together.</p>
+<h3 id="from">FROM</h3>
+<p>The FROM statement - must always be the first command (ith the exception of ARG) in your file (can have more than one FROM)</p>
+<h3 id="maintainer">MAINTAINER</h3>
+<p>defines the author of this docker file</p>
+<h3 id="run">RUN</h3>
+<p>run a command through the shell</p>
+<h3 id="add">ADD</h3>
+<p>adds local files, add contents from a tar archive  </p>
+<p><code>ADD run.sh /run.sh</code><br />
+<code>ADD project.tar.gz /install/</code>  uncompresses the tar file into the image's install folder<br />
+<code>ADD https://project.example.com/download/1.0/rpm /project</code> - works with URLs too!</p>
+<h3 id="copy">COPY</h3>
+<p>(same as ADD, but without the auto extraction of archives, also doesn't have the URL functionality)</p>
+<h3 id="env">ENV</h3>
+<p>sets environment variables during the build and when running the result<br />
+<code>ENV DB_HOST = db.production.example.com</code></p>
+<h3 id="entrypoint">ENTRYPOINT</h3>
+<p>specifies the start of the command to run (e.g. ls &amp; user can add options)<br />
+makes your containers look like command line programs</p>
+<h3 id="cmd">CMD</h3>
+<p>specifies the whole of the command to run.  There are two types</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Example</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Shell form</strong></td>
+<td>nano notes.txt</td>
+<td>is run through a shell (such as bash)</td>
+</tr>
+<tr>
+<td><strong>Exec form</strong></td>
+<td>["/bin/nano", "notes.txt"]</td>
+<td>is run directly - so slightly more efficient.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="expose">EXPOSE</h3>
+<p>maps a port into the container<br />
+<code>EXPOSE 8080</code> - is the same as -p 8080:8080</p>
+<h3 id="volume">VOLUME</h3>
+<p><code>VOLUME ["/host/path/" "/container/path/"]</code><br />
+<code>VOLUME ["/shared-data"]</code>  </p>
+<p>avoid defining shared folders in Dockerfiles<br />
+<code>VOLUME</code> means that this docker image will only work on your host</p>
+<h3 id="workdir">WORKDIR</h3>
+<p>sets the directory the container starts in</p>
+<h3 id="user">USER</h3>
+<p>sets which user the container will run as</p>
+<p>Check out the dockerfile reference on <a href="https://docs.docker.com/engine/reference/builder/">docker.com</a></p>
                 
               
               
@@ -1630,7 +1828,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../lisp/land-of-lisp-keywords/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../docker/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1639,19 +1837,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Land of Lisp
+                Docker
               </div>
             </div>
           </a>
         
         
-          <a href="../02-maven-basics/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../game_dev/juicify/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Starting with Maven
+                Game Dev - Jucification
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

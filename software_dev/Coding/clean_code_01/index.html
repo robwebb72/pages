@@ -14,7 +14,7 @@
     
     
       
-        <title>Clean Code Part 1 - My Docs</title>
+        <title>Clean Code, Part 1 - My Docs</title>
       
     
     
@@ -87,7 +87,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Clean Code Part 1
+              Clean Code, Part 1
             
           </span>
         </div>
@@ -574,12 +574,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Clean Code Part 1
+        Clean Code, Part 1
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      Clean Code Part 1
+      Clean Code, Part 1
     </a>
     
       
@@ -599,6 +599,26 @@
   <a href="#2-names" class="md-nav__link">
     2. Names
   </a>
+  
+    <nav class="md-nav" aria-label="2. Names">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-names" class="md-nav__link">
+    Class Names
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-names" class="md-nav__link">
+    Method Names
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1003,6 +1023,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/dockerfiles/" class="md-nav__link">
+      Dockerfile
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1035,8 +1067,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../game_dev/polishing/" class="md-nav__link">
-      Notes on Game Development
+    <a href="../../game_dev/juicify/" class="md-nav__link">
+      Game Dev - Jucification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game_dev/misc/" class="md-nav__link">
+      Game Dev - Misc
     </a>
   </li>
 
@@ -1048,14 +1092,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-9-2" type="checkbox" id="nav-3-9-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-9-3" type="checkbox" id="nav-3-9-3">
     
-    <label class="md-nav__link" for="nav-3-9-2">
+    <label class="md-nav__link" for="nav-3-9-3">
       Engines
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Engines" data-md-level="3">
-      <label class="md-nav__title" for="nav-3-9-2">
+      <label class="md-nav__title" for="nav-3-9-3">
         <span class="md-nav__icon md-icon"></span>
         Engines
       </label>
@@ -1537,6 +1581,26 @@
     2. Names
   </a>
   
+    <nav class="md-nav" aria-label="2. Names">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-names" class="md-nav__link">
+    Class Names
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-names" class="md-nav__link">
+    Method Names
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1586,23 +1650,27 @@
               
                 
                 
-                <h1 id="clean-code-part-1">Clean Code Part 1</h1>
+                <h1 id="clean-code-part-1">Clean Code, Part 1</h1>
 <p>Code should be readable and it should be easy to see what it's doing</p>
 <h2 id="2-names">2. Names</h2>
 <p>Use intention revealing names</p>
 <p>Use consistent spellings</p>
 <p>Use the same word for the same concept through your code (e.g. pick one of 'write' or 'save', don't switch between them)</p>
 <p>Distinctions should be meaningful, avoid noise words like (the, data, a, info, String, Object)</p>
-<p>Class Names should be a singular noun or noun phrase name
-No encoding
-Use searchable names
-Use pronounceable names</p>
-<p>Method Names
-should have a verb or verb phrase name</p>
-<p>constructors with overloaded static factory methods, should have a name that describes the argument
-MarsRaiserUnit.FromString("Unit 1/34/23/12")</p>
+<h3 id="class-names">Class Names</h3>
+<ul>
+<li>should be a singular noun or noun phrase name</li>
+<li>No encoding</li>
+<li>Use searchable names</li>
+<li>Use pronounceable names</li>
+</ul>
+<h3 id="method-names">Method Names</h3>
+<p>should have a verb or verb phrase name</p>
+<p>constructors with overloaded static factory methods - should have a name that describes the argument<br />
+<code>MarsRaiderUnit.FromString("Unit 1/34/23/12")</code></p>
 <p>Use solution domain names (e.g. comp sci terms, algorithm names, pattern names)
 Use problem domain names</p>
+<hr />
 <h2 id="3-functions">3. Functions</h2>
 <ul>
 <li>should do one thing only, and do it well</li>
@@ -1624,13 +1692,12 @@ Use problem domain names</p>
 <h3 id="use-exceptions-instead-of-returning-error-codes">Use exceptions instead of returning error codes</h3>
 <ul>
 <li>separate error handling from valid code path</li>
-<li>Error handling is ONE THING so a function that handles errors should only do that</li>
+<li>Error handling is <strong>ONE THING</strong> so a function that handles errors should only do that</li>
 </ul>
 <p>DON'T REPEAT YOURSELF</p>
+<hr />
 <h3 id="6-structured-coding">6.  Structured Coding</h3>
-<ul>
-<li>ideally every function should have one entry point and one exit point</li>
-</ul>
+<p>ideally every function should have one entry point and one exit point</p>
 <p>Code is refined to fit these rules, your first drafts won't manage it.  But have unit tests in place before you start refactoring.</p>
                 
               

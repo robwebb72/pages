@@ -564,7 +564,7 @@
 
   <li class="md-nav__item">
     <a href="../../Coding/clean_code_01/" class="md-nav__link">
-      Clean Code Part 1
+      Clean Code, Part 1
     </a>
   </li>
 
@@ -929,6 +929,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/dockerfiles/" class="md-nav__link">
+      Dockerfile
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -961,8 +973,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../game_dev/polishing/" class="md-nav__link">
-      Notes on Game Development
+    <a href="../../game_dev/juicify/" class="md-nav__link">
+      Game Dev - Jucification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game_dev/misc/" class="md-nav__link">
+      Game Dev - Misc
     </a>
   </li>
 
@@ -974,14 +998,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-9-2" type="checkbox" id="nav-3-9-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-9-3" type="checkbox" id="nav-3-9-3">
     
-    <label class="md-nav__link" for="nav-3-9-2">
+    <label class="md-nav__link" for="nav-3-9-3">
       Engines
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Engines" data-md-level="3">
-      <label class="md-nav__title" for="nav-3-9-2">
+      <label class="md-nav__title" for="nav-3-9-3">
         <span class="md-nav__icon md-icon"></span>
         Engines
       </label>
@@ -1082,8 +1106,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#common-actions" class="md-nav__link">
+    common actions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#merging" class="md-nav__link">
-    Merging
+    merging
   </a>
   
 </li>
@@ -1499,8 +1530,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#common-actions" class="md-nav__link">
+    common actions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#merging" class="md-nav__link">
-    Merging
+    merging
   </a>
   
 </li>
@@ -1519,34 +1557,48 @@
                 
                 
                 <h1 id="git-branching">Git Branching</h1>
-<p>create a branch</p>
-<blockquote>
-<p><code>git checkout -b branch_name</code> <em>(create branch and switch to it)</em>
-<code>git branch branch_name</code> <em>(create branch,don’t switch to it)</em></p>
-</blockquote>
-<p>list branches</p>
-<blockquote>
-<p><code>git branch --list</code></p>
-</blockquote>
-<p>switch to a branch</p>
-<blockquote>
-<p><code>git checkout branch_name</code></p>
-</blockquote>
-<p>delete a branch</p>
-<blockquote>
-<p><code>git branch -d branch_name</code></p>
-</blockquote>
-<hr />
-<h2 id="merging">Merging</h2>
-<p>To merge <strong>branch1</strong> into <strong>master</strong></p>
-<p>Switch to <strong>master</strong></p>
-<blockquote>
-<p><code>git checkout master</code></p>
-</blockquote>
-<p>Then merge <strong>branch1</strong> into <strong>master</strong></p>
-<blockquote>
-<p><code>git merge branch1</code></p>
-</blockquote>
+<h2 id="common-actions">common actions</h2>
+<table>
+<thead>
+<tr>
+<th>action</th>
+<th>command</th>
+<th>note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>create</td>
+<td><code>git checkout -b branch_name</code></td>
+<td>create branch and switch to it</td>
+</tr>
+<tr>
+<td>create</td>
+<td><code>git branch branch_name</code></td>
+<td>create branch but don’t switch to it</td>
+</tr>
+<tr>
+<td>list</td>
+<td><code>git branch --list</code></td>
+<td></td>
+</tr>
+<tr>
+<td>switch</td>
+<td><code>git checkout branch_name</code></td>
+<td></td>
+</tr>
+<tr>
+<td>delete</td>
+<td><code>git branch -d branch_name</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="merging">merging</h2>
+<p>To merge <strong>branch1</strong> into <strong>main</strong>:</p>
+<pre><code class="language-bash">git checkout main      ; switch to main branch
+git merge branch1      ; merge branch1 into main
+</code></pre>
                 
               
               

@@ -1546,7 +1546,7 @@
 docker version - provides more info than docker --version</p>
 <h2 id="images">Images</h2>
 <p>docker images - lists all the docker images
-docker rm \&lt;image id> - removes the image</p>
+docker rm [image id] - removes the image</p>
 <p>Name structure:- registry.example.com:port/organisation/image-name:version-tag
 Normally you can leave out the “registry.example.com:port”
 docker pull -&gt; useful to pull images down ahead of time so you ca work on them when off line.</p>
@@ -1572,39 +1572,33 @@ Can also use docker rmi &lt;image id&gt;
 <td>list containers (all)</td>
 </tr>
 <tr>
-<td>docker start \&lt;containerID></td>
+<td>docker start [containerID]</td>
 <td></td>
 </tr>
 <tr>
-<td>docker stop \&lt;containerID></td>
+<td>docker stop [containerID]</td>
 <td></td>
 </tr>
 <tr>
-<td>docker restart \&lt;containerID></td>
+<td>docker restart [containerID]</td>
 <td></td>
 </tr>
 <tr>
-<td>docker container start \&lt;containerID></td>
+<td>docker container start [containerID]</td>
 <td></td>
 </tr>
 <tr>
-<td>docker container stop \&lt;containerID></td>
+<td>docker container stop [containerID]</td>
 <td></td>
 </tr>
 <tr>
-<td>docker container restart \&lt;containerID></td>
-<td></td>
-</tr>
-<tr>
-<td><em>docker container ls</em> same as <em>docker ps</em></td>
-<td></td>
-</tr>
-<tr>
-<td><em>docker container ls -a</em> same as <em>docker ps -a</em></td>
+<td>docker container restart [containerID]</td>
 <td></td>
 </tr>
 </tbody>
 </table>
+<p><em>docker container ls</em> same as <em>docker ps</em>
+<em>docker container ls -a</em> same as <em>docker ps -a</em></p>
 <h2 id="docker-flow">Docker Flow</h2>
 <p><img alt="docker flow" src="../images/docker_flow.png" /></p>
 <h2 id="commit">Commit</h2>

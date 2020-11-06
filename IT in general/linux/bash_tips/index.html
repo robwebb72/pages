@@ -13,7 +13,7 @@
     
     
       
-        <title>Linux Misc Bits - My Docs</title>
+        <title>bash - My Docs</title>
       
     
     
@@ -56,7 +56,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#linux-misc-bits" class="md-skip">
+        <a href="#bash" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +86,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Linux Misc Bits
+              bash
             
           </span>
         </div>
@@ -190,13 +190,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
-      IT
+      IT in general
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="IT" data-md-level="1">
+    <nav class="md-nav" aria-label="IT in general" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
         <span class="md-nav__icon md-icon"></span>
-        IT
+        IT in general
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -240,11 +240,76 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../bash_tips/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        bash
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       bash
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bash_profile-and-bashrc" class="md-nav__link">
+    .bash_profile and .bashrc
+  </a>
+  
+    <nav class="md-nav" aria-label=".bash_profile and .bashrc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mac" class="md-nav__link">
+    Mac
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-gitbash-shell" class="md-nav__link">
+    Windows GitBash shell
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bash-prompt-colouring" class="md-nav__link">
+    Bash Prompt Colouring
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -264,20 +329,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../various/" class="md-nav__link">
       Linux Misc Bits
     </a>
-    
   </li>
 
         
@@ -1570,6 +1626,48 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bash_profile-and-bashrc" class="md-nav__link">
+    .bash_profile and .bashrc
+  </a>
+  
+    <nav class="md-nav" aria-label=".bash_profile and .bashrc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mac" class="md-nav__link">
+    Mac
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-gitbash-shell" class="md-nav__link">
+    Windows GitBash shell
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bash-prompt-colouring" class="md-nav__link">
+    Bash Prompt Colouring
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1581,8 +1679,36 @@
               
                 
                 
-                <h1 id="linux-misc-bits">Linux Misc Bits</h1>
-<p>Finding the version of ubuntu you’re using:-  <code>cat /etc/lsb-release</code></p>
+                <h1 id="bash">bash</h1>
+<hr />
+<h2 id="bash_profile-and-bashrc"><code>.bash_profile</code> and <code>.bashrc</code></h2>
+<h3 id="mac">Mac</h3>
+<p>add lines to the bottom of the .bash_profile file in your home directory</p>
+<h3 id="windows-gitbash-shell">Windows GitBash shell</h3>
+<p>edit (or create) the <code>.bashrc</code> file in the user's Windows home file (e.g. <code>c:\\Users\\username</code>)</p>
+<hr />
+<h2 id="bash-prompt-colouring">Bash Prompt Colouring</h2>
+<pre><code class="language-bash">export PS1=&quot;\[\e[31m\]\u\[\e[m\]@\[\e[32m\]\w\[\e[m\]$ &quot;
+
+\u is user
+\w is working directory
+
+\[\e[31m\] ... \[\e[m\] is red foreground
+\[\e[32m\] ... \[\e[m\] is green foreground
+
+\[\e[m\] -&gt; resets colour
+
+\e =&gt; escape
+
+30 black
+31 red
+32 green
+33 yellow
+34 blue
+35 magenta
+36 cyan
+37 white
+</code></pre>
                 
               
               
@@ -1601,7 +1727,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../terminal/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../mac_setup/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1610,19 +1736,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Linux Terminal
+                Setting up a MacBook Pro
               </div>
             </div>
           </a>
         
         
-          <a href="../../../Software%20Dev/3d/3d_geometry/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../terminal/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Geometry for 3D Rendering
+                Linux Terminal
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

@@ -574,6 +574,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../Coding/SOLID_Principles/" class="md-nav__link">
+      SOLID Principles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../Coding/clean_code_01/" class="md-nav__link">
       Clean Code, Part 1 👷🏼‍♂️👷🏼‍♀️
     </a>
@@ -1454,6 +1466,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../dictionaries/" class="md-nav__link">
+      Dictionaries 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../pytest/" class="md-nav__link">
       Pytest 👷🏼‍♂️👷🏼‍♀️
     </a>
@@ -1497,6 +1521,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#built-in-functions" class="md-nav__link">
     Built In Functions
   </a>
@@ -1513,20 +1544,6 @@
         <li class="md-nav__item">
   <a href="#lists" class="md-nav__link">
     Lists
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tuples" class="md-nav__link">
-    Tuples
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dictionary" class="md-nav__link">
-    Dictionary
   </a>
   
 </li>
@@ -1603,6 +1620,56 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-14-4" type="checkbox" id="nav-4-14-4">
+    
+    <label class="md-nav__link" for="nav-4-14-4">
+      Crash Course Notes
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Crash Course Notes" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-14-4">
+        <span class="md-nav__icon md-icon"></span>
+        Crash Course Notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Crash_Course_Notes/lists/" class="md-nav__link">
+      Lists
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Crash_Course_Notes/strings/" class="md-nav__link">
+      Strings
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -1702,6 +1769,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#built-in-functions" class="md-nav__link">
     Built In Functions
   </a>
@@ -1718,20 +1792,6 @@
         <li class="md-nav__item">
   <a href="#lists" class="md-nav__link">
     Lists
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tuples" class="md-nav__link">
-    Tuples
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dictionary" class="md-nav__link">
-    Dictionary
   </a>
   
 </li>
@@ -1818,8 +1878,11 @@
                 
                 
                 <h1 id="python-learning">Python Learning 👷🏼‍♂️👷🏼‍♀️</h1>
-<p>Raise to the power -&gt; **, e.g.</p>
+<h2 id="operators">operators</h2>
+<p><code>**</code> -&gt; raise to the power
+e.g.</p>
 <pre><code class="language-python">2**8 = 256
+powers_of_two = [2**value for value in range(0,9)]
 </code></pre>
 <h2 id="built-in-functions">Built In Functions</h2>
 <pre><code class="language-python">dir(__builtins__)  # shows all the builtin functions (and other stuff, eg., errors)
@@ -1841,7 +1904,7 @@ dir(list) # shows all the methods that apply to lists
 <li>bool</li>
 </ul>
 <h2 id="looping">Looping</h2>
-<pre><code class="language-python">for x in range(0:3):
+<pre><code class="language-python">for x in range(0,3):
 for x in range(0,8,2):
 </code></pre>
 <h2 id="lists">Lists</h2>
@@ -1849,26 +1912,10 @@ for x in range(0,8,2):
 slicing [start:stop:step] (excludes upper bound - e.g. stop isn't included)
 valid options:-
   [:] , [4:] , [:5] , [-3:] , [:-5]</p>
-<p>.remove(value) - removes the first instance of value in the list
-.pop(index) - removes the item at index location  </p>
 <p>[x for x in ...]  - list generator</p>
 <p>Can chain slices together e.g.
   "Hello!"[-3][1] -&gt; returns 'o' [-3] returns "lo!" and then "lo!"[1] returns "o"</p>
-<h2 id="tuples">Tuples</h2>
-<p>Defined with round brackets.  Basically an immutable list (cannot add, update or remove items in a tuple)</p>
-<h2 id="dictionary">Dictionary</h2>
-<p>Matched key:value pairs
-{'a':1, 'b':2, 'c':3}</p>
-<p>dict.keys() -&gt; lists all the keys
-dict.values() -&gt; lists all the values
-dict[key] -&gt; returns the value associated with that key, throws an error if key doesn't exist
-dict.remove[key] -&gt; removes the k:v pair (also "del dict[k]" does the same thing)
-dict[key] = value -&gt; adds the k:v pair or updates the k:v pair if it already exists in the dict</p>
-<p>Zipping
-keys = ['a', 'b', 'c']
-vals = [1,2,3]
-mydict = dict(zip(keys,vals))
-mydict now equals -&gt; {'a':1, 'b':2, 'c':3}</p>
+<hr />
 <h2 id="exceptions">Exceptions</h2>
 <pre><code class="language-python">&gt;&gt;&gt; import traceback, sys
 &gt;&gt;&gt; def grail(x):
@@ -1886,6 +1933,7 @@ mydict now equals -&gt; {'a':1, 'b':2, 'c':3}</p>
    File &quot;&lt;stdin&gt;&quot;, line 2, in &lt;module&gt;
    File &quot;&lt;stdin&gt;&quot;, line 2, in grail
 </code></pre>
+<hr />
 <h2 id="os-module">os module</h2>
 <p>os.getpid()
 os.getcwd()
@@ -1908,32 +1956,41 @@ os.path.abspath('.') - returns the same as os.path.cwd
 os.path.abspath('') - considered same as '.'
 os.path.abspath('..') - returns absolute path to parent folder</p>
 <h3 id="shell-commands">Shell Commands</h3>
-<p>os.system('shell command here')
-e.g. os.system('ls -la')</p>
+<p><code>os.system('shell command here')</code>
+e.g. <code>os.system('ls -la')</code></p>
 <p>Will wait for the command to return.  To run the command in it's own process use:-</p>
-<ul>
-<li>(windows) os.system('run shell command')</li>
-<li>(linux/mac) os.system("shell command &amp;')</li>
-</ul>
-<p>os.popen('shell command')
+<table>
+<thead>
+<tr>
+<th>os</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>windows</td>
+<td><code>os.system('run shell command')</code></td>
+</tr>
+<tr>
+<td>linux/mac</td>
+<td><code>os.system("shell command &amp;')</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>os.popen('shell command')</code></strong>
 takes the output of the shell command and runs it through a pipe or io stream
-e.g. print(os.popen('ls -la').read())</p>
-<pre><code class="language-python">text = os.popen('ls -la').read()  // takes the output from 'ls -la' and passes it to text
+e.g. the following takes the output from <code>ls -la</code> and passes it to text.</p>
+<pre><code class="language-python">text = os.popen('ls -la').read()  
 </code></pre>
 <h3 id="shell-commands-subprocess-module">Shell Commands - Subprocess module</h3>
 <p>import subprocess</p>
-<p>subprocess.call('python helloworld.py)  # like os.system, but returns the return code as well</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>pipe = subprocess.Popen('python helloshell.py', stdout=subprocess.PIPE)
-pipe.communicate()
+<p><code>subprocess.call('python helloworld.py)</code>  # like os.system, but returns the return code as well</p>
+<pre><code class="language-python">&gt;&gt;&gt; pipe = subprocess.Popen('python helloshell.py', stdout=subprocess.PIPE)
+&gt;&gt;&gt; pipe.communicate()
 (b'The Meaning of Life\r\n', None)
-pipe.returncode
-0</p>
-</blockquote>
-</blockquote>
-</blockquote>
+&gt;&gt;&gt; pipe.returncode
+0
+</code></pre>
 <hr />
 <h2 id="impractical-python">Impractical Python</h2>
 <h3 id="ch1-pylint">Ch1. pylint</h3>
@@ -1978,13 +2035,13 @@ pylint --max_line_length=79
           </a>
         
         
-          <a href="../../tools/vi_notes/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../Crash_Course_Notes/lists/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                VIM 👷🏼‍♂️👷🏼‍♀️
+                Lists
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

@@ -574,6 +574,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../Coding/SOLID_Principles/" class="md-nav__link">
+      SOLID Principles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../Coding/clean_code_01/" class="md-nav__link">
       Clean Code, Part 1 👷🏼‍♂️👷🏼‍♀️
     </a>
@@ -1452,6 +1464,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../dictionaries/" class="md-nav__link">
+      Dictionaries 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -1483,6 +1507,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    installation
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#issues-encountered" class="md-nav__link">
@@ -1520,6 +1551,56 @@
     <a href="../python/" class="md-nav__link">
       Python Learning 👷🏼‍♂️👷🏼‍♀️
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-14-4" type="checkbox" id="nav-4-14-4">
+    
+    <label class="md-nav__link" for="nav-4-14-4">
+      Crash Course Notes
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Crash Course Notes" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-14-4">
+        <span class="md-nav__icon md-icon"></span>
+        Crash Course Notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Crash_Course_Notes/lists/" class="md-nav__link">
+      Lists
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Crash_Course_Notes/strings/" class="md-nav__link">
+      Strings
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -1619,6 +1700,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#issues-encountered" class="md-nav__link">
     issues encountered
   </a>
@@ -1652,14 +1740,21 @@
                 
                 
                 <h1 id="pytest">Pytest 👷🏼‍♂️👷🏼‍♀️</h1>
+<p><a href="http://www.pytest.org">pytest.org</a></p>
+<h2 id="installation">installation</h2>
+<pre><code class="language-bash">pip install pytest
+</code></pre>
+<hr />
 <h2 id="issues-encountered">issues encountered</h2>
 <h3 id="test-cannot-find-module">test cannot find module</h3>
 <p><a href="https://stackoverflow.com/questions/49028611/pytest-cannot-find-module">Solution#1 on StackOverflow</a><br />
 <a href="https://docs.pytest.org/en/latest/pythonpath.html#invoking-pytest-versus-python-m-pytest">info from docs.pytest.org</a></p>
 <p>This is something to do with the way pytest handles the root of the project.  It seems to be caused when all the python source files are held within sub folders in the project folder.  Looking at the stackoverflow responses in solution #1 there are two solutions:</p>
-<p>instead of using <code>pytest -svv</code> use <code>python3 -m pytest -svv</code></p>
-<p>- or -</p>
-<p>add an empty python file to the root of your project structure.</p>
+<ol>
+<li>instead of using <code>pytest -svv</code> use <code>python3 -m pytest -svv</code>  </li>
+<li>add an empty python file to the root of your project structure.</li>
+</ol>
+<p>The info from docs.pytest.org seems to favour option 1.</p>
                 
               
               
@@ -1678,7 +1773,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../maven/resources/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../dictionaries/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1687,7 +1782,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Maven Resources
+                Dictionaries 👷🏼‍♂️👷🏼‍♀️
               </div>
             </div>
           </a>

@@ -1466,6 +1466,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../datetime/" class="md-nav__link">
+      datetime
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../dictionaries/" class="md-nav__link">
       Dictionaries 👷🏼‍♂️👷🏼‍♀️
     </a>
@@ -1505,19 +1517,55 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-14-4" type="checkbox" id="nav-4-14-4" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-14-5" type="checkbox" id="nav-4-14-5" checked>
     
-    <label class="md-nav__link" for="nav-4-14-4">
+    <label class="md-nav__link" for="nav-4-14-5">
       Crash Course Notes
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Crash Course Notes" data-md-level="3">
-      <label class="md-nav__title" for="nav-4-14-4">
+      <label class="md-nav__title" for="nav-4-14-5">
         <span class="md-nav__icon md-icon"></span>
         Crash Course Notes
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../function_arguments/" class="md-nav__link">
+      Function Arguments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../importing/" class="md-nav__link">
+      Importing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../input/" class="md-nav__link">
+      Input
+    </a>
+  </li>
+
         
           
           
@@ -1584,6 +1632,13 @@
         <li class="md-nav__item">
   <a href="#conversion" class="md-nav__link">
     conversion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatting" class="md-nav__link">
+    formatting
   </a>
   
 </li>
@@ -1716,6 +1771,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#formatting" class="md-nav__link">
+    formatting
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1765,6 +1827,7 @@
 </tr>
 </tbody>
 </table>
+<p>can also give a string of chars to strip, and it will strip those chars from the beginning/end of a string.</p>
 <h2 id="concatenation">concatenation</h2>
 <pre><code class="language-python">a = &quot;Hello&quot;
 b = &quot;World&quot;
@@ -1775,6 +1838,44 @@ print(a+&quot; &quot;+b)
 print (&quot;The answer is &quot; + str(answer))
 </code></pre>
 <p>The method <code>str()</code> calls the builtin method <code>__str()__</code></p>
+<h2 id="formatting">formatting</h2>
+<p>Useful reference ... <a href="https://pyformat.info/">pyformat.info</a></p>
+<table>
+<thead>
+<tr>
+<th>code</th>
+<th>output</th>
+<th>notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"%s %s" % ('one', 'two')</code></td>
+<td>'one two'</td>
+<td>old style</td>
+</tr>
+<tr>
+<td><code>"{} {}".format('one','two')</code></td>
+<td>'one two'</td>
+<td>new style</td>
+</tr>
+<tr>
+<td><code>"%d %d" % (1, 2)</code></td>
+<td>1 2</td>
+<td>old style</td>
+</tr>
+<tr>
+<td><code>"{} {}".format(1, 2)</code></td>
+<td>1 2</td>
+<td>new style</td>
+</tr>
+<tr>
+<td><code>"{1} {0}".format('one','two')</code></td>
+<td>'two one'</td>
+<td></td>
+</tr>
+</tbody>
+</table>
                 
               
               

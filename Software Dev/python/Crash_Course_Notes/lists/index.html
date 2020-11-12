@@ -1466,6 +1466,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../datetime/" class="md-nav__link">
+      datetime
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../dictionaries/" class="md-nav__link">
       Dictionaries 👷🏼‍♂️👷🏼‍♀️
     </a>
@@ -1505,19 +1517,55 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-14-4" type="checkbox" id="nav-4-14-4" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-14-5" type="checkbox" id="nav-4-14-5" checked>
     
-    <label class="md-nav__link" for="nav-4-14-4">
+    <label class="md-nav__link" for="nav-4-14-5">
       Crash Course Notes
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Crash Course Notes" data-md-level="3">
-      <label class="md-nav__title" for="nav-4-14-4">
+      <label class="md-nav__title" for="nav-4-14-5">
         <span class="md-nav__icon md-icon"></span>
         Crash Course Notes
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../function_arguments/" class="md-nav__link">
+      Function Arguments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../importing/" class="md-nav__link">
+      Importing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../input/" class="md-nav__link">
+      Input
+    </a>
+  </li>
+
         
           
           
@@ -1572,6 +1620,13 @@
         <li class="md-nav__item">
   <a href="#list-comphrension" class="md-nav__link">
     List Comphrension
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copying" class="md-nav__link">
+    Copying
   </a>
   
 </li>
@@ -1737,6 +1792,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#copying" class="md-nav__link">
+    Copying
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tuples" class="md-nav__link">
     Tuples
   </a>
@@ -1860,6 +1922,10 @@
 <h2 id="list-comphrension">List Comphrension</h2>
 <pre><code class="language-python">powers_of_two = [2**value for value in range(0,11)]
 </code></pre>
+<h2 id="copying">Copying</h2>
+<pre><code class="language-python">listb = lista    # NOPE!  This is just copying a reference to the list
+listb = lista[:] # copies the contents of lista to listb
+</code></pre>
 <hr />
 <h2 id="tuples">Tuples</h2>
 <p>Defined with round brackets.  Basically an immutable list (cannot add, update or remove items in a tuple)</p>
@@ -1885,7 +1951,7 @@ my_tuple = (3, 2, 1)
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../python/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../input/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1894,7 +1960,7 @@ my_tuple = (3, 2, 1)
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Python Learning 👷🏼‍♂️👷🏼‍♀️
+                Input
               </div>
             </div>
           </a>

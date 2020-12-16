@@ -1820,6 +1820,11 @@ int edge3 = (x1 - x3) * (y1 + y3);
 
 if (edge1 + edge2 + edge3 &lt; 0) // triangle is facing away - don't draw it
 </code></pre>
+<p>Looking at this code, there's an error in the condition.</p>
+<p>It's calculating the z component of each vector that makes up the triangle.  If all the resulting z components are facing the right way, the triangle is facing the viewer.</p>
+<p>The condition should probably read...</p>
+<pre><code class="language-c++">if (edge1 &lt;= 0 &amp;&amp; edge2 &lt;= 0 &amp;&amp; edge3 &lt;= 0)
+</code></pre>
 <hr />
 <h2 id="dot-and-cross-products">Dot and Cross Products</h2>
 <p><img alt="dot and cross products" src="../3d_geometry_images/dot_and_cross.png" /></p>

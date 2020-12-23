@@ -598,6 +598,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../Coding/context/" class="md-nav__link">
+      Context to Keep in Mind when Coding
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../Coding/design_Guidelines/" class="md-nav__link">
       Code Design Guidelines
     </a>
@@ -1580,6 +1592,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#converting-between-datetime-and-time" class="md-nav__link">
+    Converting Between 'datetime' and 'time'
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1888,6 +1907,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#converting-between-datetime-and-time" class="md-nav__link">
+    Converting Between 'datetime' and 'time'
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1926,6 +1952,12 @@ print (int(time.mktime(time_tuple)))
 <h4 id="timegmtime-to-convert-to-struct_time">'time.gmtime()' to convert to struct_time</h4>
 <pre><code class="language-python">time.gmtime(1607990400)
 time.struct_time(tm_year=2020, tm_mon=12, tm_mday=15, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=1, tm_yday=350, tm_isdst=0)
+</code></pre>
+<h2 id="converting-between-datetime-and-time">Converting Between 'datetime' and 'time'</h2>
+<p>Assuming you're not bothered about microseconds...</p>
+<pre><code class="language-python">import datetime
+
+t = datetime.timestamp()
 </code></pre>
                 
               

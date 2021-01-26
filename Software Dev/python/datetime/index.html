@@ -1541,6 +1541,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#reading-from-string" class="md-nav__link">
+    reading from string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#formatting" class="md-nav__link">
     formatting
   </a>
@@ -1647,16 +1654,28 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../regex/" class="md-nav__link">
+      Regular Expressions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-14-5" type="checkbox" id="nav-4-14-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-14-6" type="checkbox" id="nav-4-14-6">
     
-    <label class="md-nav__link" for="nav-4-14-5">
+    <label class="md-nav__link" for="nav-4-14-6">
       Crash Course Notes
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Crash Course Notes" data-md-level="3">
-      <label class="md-nav__title" for="nav-4-14-5">
+      <label class="md-nav__title" for="nav-4-14-6">
         <span class="md-nav__icon md-icon"></span>
         Crash Course Notes
       </label>
@@ -1856,6 +1875,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#reading-from-string" class="md-nav__link">
+    reading from string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#formatting" class="md-nav__link">
     formatting
   </a>
@@ -1929,6 +1955,15 @@
                 
                 <h1 id="datetime-and-time">'datetime' and 'time'</h1>
 <h2 id="datetime">datetime</h2>
+<h3 id="reading-from-string">reading from string</h3>
+<p>Use <strong>datetime.<a href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior">strptime()</a></strong></p>
+<pre><code class="language-python">from datetime import datetime
+
+date_time_str=&quot;2101261523&quot;
+date_time_obj = datetime.strptime(date_time_str,&quot;%Y%m%d%H%M&quot;)
+print(date_time_obj)
+2101-02-06 15:23:00
+</code></pre>
 <h3 id="formatting">formatting</h3>
 <pre><code class="language-python">from datetime import datetime
 

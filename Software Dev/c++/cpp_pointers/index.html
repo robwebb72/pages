@@ -1951,10 +1951,11 @@ unqiue_ptr&lt;SomeObject&gt; pObj3 = std::move(pObj1);
 
 </code></pre>
 <p>Unique pointers can be passed as arguments using references.</p>
-<p>``` c++
-void MyFunc(const std::unique_ptr<SomeObject>&amp; pObj) {
+<pre><code class="language-c++">void MyFunc(const std::unique_ptr&lt;SomeObject&gt;&amp; pObj) {
     // do something with pObj here
-}</p>
+    std::cout &lt;&lt; pObj-&gt;field &lt;&lt; endl;
+}
+</code></pre>
                 
               
               

@@ -1613,6 +1613,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#matching" class="md-nav__link">
+    matching
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1858,6 +1865,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#matching" class="md-nav__link">
+    matching
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1887,6 +1901,14 @@ x = re.sub(&quot;([a-z])&quot;,&quot;#\\1&quot;,txt)  # x is now &quot;01#a02#b0
 <li>the braces around [a-z] define that as a set</li>
 <li>\\1 includes the first defined set in the replacing string, note the double backslash in the string.  could also have written this as <code>r"#\1"</code></li>
 </ol>
+<h2 id="matching">matching</h2>
+<pre><code class="language-python">txt = &quot;NameD210126T10201130a01b02c03&quot;
+x = re.match(&quot;(.*)D([0-9]{6})T([0-9]*)(.*)&quot;)
+# x.groups[0] -&gt; &quot;Name&quot;
+# x.groups[1] -&gt; &quot;210126&quot;
+# x.groups[2] -&gt; &quot;10201130&quot;
+# x.groups[3] -&gt; &quot;a01b02c03&quot;
+</code></pre>
                 
               
               

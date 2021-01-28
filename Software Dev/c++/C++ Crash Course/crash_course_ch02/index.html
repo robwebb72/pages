@@ -2122,15 +2122,15 @@ long double = 3.142L;
 </tr>
 </tbody>
 </table>
-<p>Literals - use the L: prefix for wide chars:-</p>
+<p>Literals - use the <code>L</code> prefix for wide chars:-</p>
 <pre><code class="language-c++">char a = 'j';
 wchar_t = L'j';
 </code></pre>
 <h2 id="stdbyte">std::byte</h2>
 <p>an 8 bit value.  Cannot use arithmetic operations but can use bitwise.</p>
 <h2 id="size_t">size_t</h2>
-<p>held in the <code>&lt;cstddef&gt;</code> header.  the print specifier is <code>%zd</code></p>
-<pre><code class="language-c++">printf(&quot;size of float is %zd&quot;, sizeof(float))
+<p>held in the <code>&lt;cstddef&gt;</code> header.  the print specifier is <code>%zu</code></p>
+<pre><code class="language-c++">printf(&quot;size of float is %zu&quot;, sizeof(float))
 </code></pre>
 <h2 id="initialising">Initialising</h2>
 <table>
@@ -2186,7 +2186,12 @@ int array4[5];             // array length is 5, contents are uninitialised
     //do stuff with val
 }
 </code></pre>
-<p><strong>Note:</strong> the range based-loop cannot be used to update the values held in the array.</p>
+<p><strong>Note:</strong> the range based-loop cannot be used to update the values held in the array as the value used is a copy of the value from the array.</p>
+<p>However, by using references you can update the value...</p>
+<pre><code class="language-c++">for(int&amp; val : array2) {
+    //do stuff TO val
+}
+</code></pre>
 <hr />
 <h2 id="strings">Strings</h2>
 <p>CStrings are declared with...</p>

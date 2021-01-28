@@ -894,35 +894,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#accessing-maps" class="md-nav__link">
-    Accessing Maps
-  </a>
-  
-    <nav class="md-nav" aria-label="Accessing Maps">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#operator" class="md-nav__link">
-    [] Operator
+  <a href="#accessing-items-using-a-key" class="md-nav__link">
+    Accessing Items using a Key
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#findkey" class="md-nav__link">
-    find(key)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#atkey" class="md-nav__link">
-    at(key)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#looping-through-a-map" class="md-nav__link">
     Looping through a map
   </a>
@@ -948,23 +926,24 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#destroying-maps" class="md-nav__link">
     Destroying Maps
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#misc-notes" class="md-nav__link">
-    Misc Notes
+    <nav class="md-nav" aria-label="Destroying Maps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-note-about-pointers" class="md-nav__link">
+    A note about pointers
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1922,35 +1901,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#accessing-maps" class="md-nav__link">
-    Accessing Maps
-  </a>
-  
-    <nav class="md-nav" aria-label="Accessing Maps">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#operator" class="md-nav__link">
-    [] Operator
+  <a href="#accessing-items-using-a-key" class="md-nav__link">
+    Accessing Items using a Key
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#findkey" class="md-nav__link">
-    find(key)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#atkey" class="md-nav__link">
-    at(key)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#looping-through-a-map" class="md-nav__link">
     Looping through a map
   </a>
@@ -1976,23 +1933,24 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#destroying-maps" class="md-nav__link">
     Destroying Maps
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#misc-notes" class="md-nav__link">
-    Misc Notes
+    <nav class="md-nav" aria-label="Destroying Maps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-note-about-pointers" class="md-nav__link">
+    A note about pointers
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2017,18 +1975,43 @@
 std::map&lt;int,std::string&gt; my_map;
 </code></pre>
 <h3 id="populating">Populating</h3>
-<p><strong>TODO</strong></p>
-<h2 id="accessing-maps">Accessing Maps</h2>
-<h3 id="operator">[] Operator</h3>
-<p>the [] operator will insert the key if it isn't found.</p>
-<h3 id="findkey"><code>find(key)</code></h3>
-<p><code>find(key)</code> returns an iterator to the map.  If the key isn't found in the map, the iterator points at <code>map.end()</code>.<br />
-<code>iterator.second()</code> points at the value in the [key,value] pair.</p>
-<h3 id="atkey"><code>at(key)</code></h3>
-<p><code>at(key)</code> will throw an exception if the key is not found.</p>
-<h3 id="looping-through-a-map">Looping through a map</h3>
-<h4 id="using-an-iterator">Using an iterator</h4>
-<pre><code class="language-c++">std::map&lt;std::string, int&gt;::iterator it = my_map.begin();
+<p><strong>TODO</strong> Need to write up my notes about this</p>
+<hr />
+<h2 id="accessing-items-using-a-key">Accessing Items using a Key</h2>
+<table>
+<thead>
+<tr>
+<th>action</th>
+<th>outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[key]</code></td>
+<td>inserts key if it isn't found in map</td>
+</tr>
+<tr>
+<td><code>find(key)</code></td>
+<td>returns iterator to the map. if the key not found, the iterator points at <code>map.end()</code></td>
+</tr>
+<tr>
+<td><code>at(key)</code></td>
+<td>throws an exception if the key is not found.</td>
+</tr>
+</tbody>
+</table>
+<p><code>iterator.second()</code> points at the value in the [key,value] pair.</p>
+<hr />
+<h2 id="looping-through-a-map">Looping through a map</h2>
+<h3 id="using-an-iterator">Using an iterator</h3>
+<p>Using</p>
+<ul>
+<li><code>mymap.begin()</code> to get an iterator (the type for this is a candidate for the <code>auto</code> keyword!)</li>
+<li>the iterator can be incremented with <code>++</code></li>
+<li>compare the iterator with <code>mymap.end()</code> to check for the end (<code>mymap.end()</code> points to the space AFTER the last item)</li>
+</ul>
+<pre><code class="language-c++">
+std::map&lt;std::string, int&gt;::iterator it = my_map.begin();
 while (it != my_map.end()) {
     std::string key = it-&gt;first;
     int value = it-&gt;second;
@@ -2036,17 +2019,22 @@ while (it != my_map.end()) {
 }
 </code></pre>
 <p>And naturally this can be done in a for loop at well.</p>
-<h4 id="using-a-ranged-for-loop-c11">Using a ranged for loop (C++11)</h4>
+<pre><code class="language-c++">for(auto it= my_map.begin(); it!=my_map.end(); it++) {
+    // DO STUFF
+}
+</code></pre>
+<h3 id="using-a-ranged-for-loop-c11">Using a ranged for loop (C++11)</h3>
 <pre><code class="language-c++">for (std::pair&lt;std::string, int&gt; element : my_map) {
     std::string key = element.first;
     int value = element.second;
 }
 </code></pre>
+<hr />
 <h2 id="destroying-maps">Destroying Maps</h2>
-<p>If a map contains pointers, will need to delete the memory allocated to those pointers (if appropriate to do so - i.e. if the map owns that data - in other words if the structure pointed to was created as it was inserted into the map).  This can be done by iterating through the map.</p>
-<p>The elements in the map then need to be removed with <code>map.clear()</code></p>
-<p>And of course, if the map was created with <code>new</code>, it needed a <code>delete</code></p>
-<h2 id="misc-notes">Misc Notes</h2>
+<p>The elements in a map can be removed with <code>map.clear()</code></p>
+<p>And of course, if the map was created with <code>new</code>, it needs a <code>delete</code></p>
+<h3 id="a-note-about-pointers">A note about pointers</h3>
+<p>If a map contains pointers, will need to delete the memory allocated to those pointers (if appropriate to do so - i.e. if the map owns that data - in other words if the structure pointed to was created as it was inserted into the map).  This can be done by iterating through the map.  <strong>HOWEVER</strong> by using <strong>smart pointers</strong> freeing allocated memory is handled by the pointer system itself - so no need for your code to free the memory up</p>
                 
               
               

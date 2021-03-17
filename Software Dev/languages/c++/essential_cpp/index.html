@@ -1,0 +1,3790 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.2">
+    
+    
+      
+        <title>Essential C++ 👷🏼‍♂️👷🏼‍♀️ - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.19190aaf.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.24b84193.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#essential-c" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../../.." title="My Docs" class="md-header-nav__button md-logo" aria-label="My Docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            My Docs
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Essential C++ 👷🏼‍♂️👷🏼‍♀️
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../.." class="md-nav__link">
+      The Knowledgarium
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../../resources/" class="md-nav__link">
+      Resources
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      IT in general
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="IT in general" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        IT in general
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../IT%20in%20general/mac_setup/" class="md-nav__link">
+      Setting up a MacBook Pro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Linux
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Linux" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon"></span>
+        Linux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../IT%20in%20general/linux/bash_tips/" class="md-nav__link">
+      bash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../IT%20in%20general/linux/terminal/" class="md-nav__link">
+      Linux Terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../IT%20in%20general/linux/various/" class="md-nav__link">
+      Linux Misc Bits
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Software Dev
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Software Dev" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Software Dev
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      3d
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="3d" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        <span class="md-nav__icon md-icon"></span>
+        3d
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../3d/3d_geometry/" class="md-nav__link">
+      Geometry for 3D Rendering
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Coding
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Coding" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        <span class="md-nav__icon md-icon"></span>
+        Coding
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../coding/SOLID_Principles/" class="md-nav__link">
+      SOLID Principles 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../coding/clean-code-notes/" class="md-nav__link">
+      Clean Code Notes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../coding/context/" class="md-nav__link">
+      Context to Keep in Mind when Coding
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../coding/design_Guidelines/" class="md-nav__link">
+      Code Design Guidelines
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../coding/general_coding_and_learning/" class="md-nav__link">
+      Learning 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../coding/tdd/" class="md-nav__link">
+      Test Driven Development (TDD)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      Design patterns
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Design patterns" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        <span class="md-nav__icon md-icon"></span>
+        Design patterns
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../design_patterns/strategy/" class="md-nav__link">
+      The Strategy Pattern 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+    
+    <label class="md-nav__link" for="nav-4-4">
+      Docker
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Docker" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-4">
+        <span class="md-nav__icon md-icon"></span>
+        Docker
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../docker/docker/" class="md-nav__link">
+      Docker 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../docker/dockerfiles/" class="md-nav__link">
+      Dockerfile 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5">
+    
+    <label class="md-nav__link" for="nav-4-5">
+      Functional programming
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Functional programming" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-5">
+        <span class="md-nav__icon md-icon"></span>
+        Functional programming
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../functional_programming/general/" class="md-nav__link">
+      Functional Programming 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-6" type="checkbox" id="nav-4-6">
+    
+    <label class="md-nav__link" for="nav-4-6">
+      Game dev
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Game dev" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-6">
+        <span class="md-nav__icon md-icon"></span>
+        Game dev
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../game_dev/juicify/" class="md-nav__link">
+      Game Dev - Jucification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../game_dev/misc/" class="md-nav__link">
+      Game Dev - Misc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-6-3" type="checkbox" id="nav-4-6-3">
+    
+    <label class="md-nav__link" for="nav-4-6-3">
+      Engines
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Engines" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-6-3">
+        <span class="md-nav__icon md-icon"></span>
+        Engines
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../game_dev/engines/engines_list/" class="md-nav__link">
+      Game Engines List
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../game_dev/engines/olc_pixel_game_engine2/" class="md-nav__link">
+      olc::PixelGameEngine 2
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-7" type="checkbox" id="nav-4-7">
+    
+    <label class="md-nav__link" for="nav-4-7">
+      Git
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Git" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-7">
+        <span class="md-nav__icon md-icon"></span>
+        Git
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../git/branching/" class="md-nav__link">
+      Git Branching
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../git/git_and_ssh/" class="md-nav__link">
+      Git and SSH 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../git/git_ignore/" class="md-nav__link">
+      Git Ignore Template File
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../git/github_init_repo/" class="md-nav__link">
+      GitHub Set Up
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../git/log/" class="md-nav__link">
+      Git Log 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../git/rebasing/" class="md-nav__link">
+      Git Rebase 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8">
+    
+    <label class="md-nav__link" for="nav-4-8">
+      Katas
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Katas" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-8">
+        <span class="md-nav__icon md-icon"></span>
+        Katas
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../katas/csharp_katas/" class="md-nav__link">
+      C# Katas 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../katas/java_katas/" class="md-nav__link">
+      Java Katas 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../katas/kotlin_katas/" class="md-nav__link">
+      Kotlin Katas 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-9" type="checkbox" id="nav-4-9" checked>
+    
+    <label class="md-nav__link" for="nav-4-9">
+      Languages
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Languages" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-9">
+        <span class="md-nav__icon md-icon"></span>
+        Languages
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-9-1" type="checkbox" id="nav-4-9-1">
+    
+    <label class="md-nav__link" for="nav-4-9-1">
+      C#
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="C#" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-9-1">
+        <span class="md-nav__icon md-icon"></span>
+        C#
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%23/arrays/" class="md-nav__link">
+      C# Arrays
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%23/dependency_inversion/" class="md-nav__link">
+      C# Dependency Inversion - Example 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%23/dictionaries/" class="md-nav__link">
+      C# Dictionaries
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%23/ienumerable/" class="md-nav__link">
+      C# IEnumerable
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%23/inheritance/" class="md-nav__link">
+      C# Inheritance 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%23/lists/" class="md-nav__link">
+      C# Lists 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%23/objects_and_classes/" class="md-nav__link">
+      C# Misc Stuff 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%23/operators/" class="md-nav__link">
+      C# Operators 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%23/parameters/" class="md-nav__link">
+      C# Parameters 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%23/properties/" class="md-nav__link">
+      C# Properties 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%23/strings/" class="md-nav__link">
+      C# Strings 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%23/various/" class="md-nav__link">
+      C# Various Bits and Pieces 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-9-1-13" type="checkbox" id="nav-4-9-1-13">
+    
+    <label class="md-nav__link" for="nav-4-9-1-13">
+      Linq
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Linq" data-md-level="4">
+      <label class="md-nav__title" for="nav-4-9-1-13">
+        <span class="md-nav__icon md-icon"></span>
+        Linq
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c%23/linq/Scott%27s%20Linq%20Blog/" class="md-nav__link">
+      Learning from ScottGu's Linq Blog 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-9-2" type="checkbox" id="nav-4-9-2" checked>
+    
+    <label class="md-nav__link" for="nav-4-9-2">
+      C++
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="C++" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-9-2">
+        <span class="md-nav__icon md-icon"></span>
+        C++
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cave_of_prog/" class="md-nav__link">
+      C++ CoP 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../code_snippets/" class="md-nav__link">
+      Code Snippets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cpp_maps/" class="md-nav__link">
+      C++ Maps 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cpp_pointers/" class="md-nav__link">
+      C++ Pointers 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cpp_polymorphism/" class="md-nav__link">
+      C++ Polymorphism 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cpp_vectors/" class="md-nav__link">
+      C++ Vectors 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../design_patterns/" class="md-nav__link">
+      C++ Design Patterns 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Essential C++ 👷🏼‍♂️👷🏼‍♀️
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Essential C++ 👷🏼‍♂️👷🏼‍♀️
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pointers" class="md-nav__link">
+    Pointers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+    <nav class="md-nav" aria-label="References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#differences-between-pointers-and-references" class="md-nav__link">
+    differences between pointers and references
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitive-array" class="md-nav__link">
+    Primitive Array
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitive-string-or-c-string" class="md-nav__link">
+    Primitive String (or C-String)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outputting-text" class="md-nav__link">
+    Outputting Text
+  </a>
+  
+    <nav class="md-nav" aria-label="Outputting Text">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#printf-and-puts" class="md-nav__link">
+    printf() and puts()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cout" class="md-nav__link">
+    cout
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-type-sizes" class="md-nav__link">
+    Data Type Sizes
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Type Sizes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-sizes" class="md-nav__link">
+    Standard sizes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#escape-sequences" class="md-nav__link">
+    Escape Sequences
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qualifiers" class="md-nav__link">
+    Qualifiers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bitfields" class="md-nav__link">
+    Bitfields
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enum" class="md-nav__link">
+    Enum
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#union" class="md-nav__link">
+    Union
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typedefs-autotype-and-nullptr" class="md-nav__link">
+    Typedefs, Autotype and Nullptr
+  </a>
+  
+    <nav class="md-nav" aria-label="Typedefs, Autotype and Nullptr">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autotype-c11-onwards" class="md-nav__link">
+    autotype (C++11 onwards)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nullptr-c11-onwards" class="md-nav__link">
+    nullptr (C++11 onwards)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    Operators
+  </a>
+  
+    <nav class="md-nav" aria-label="Operators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logical-operators" class="md-nav__link">
+    Logical operators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitwise-operators" class="md-nav__link">
+    Bitwise operators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-operators" class="md-nav__link">
+    Memory Operators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-pointers" class="md-nav__link">
+    Function Pointers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variable-number-of-parameters" class="md-nav__link">
+    Variable number of parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objects-classes" class="md-nav__link">
+    Objects &amp; Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Objects &amp; Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#const-classes" class="md-nav__link">
+    Const Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructors-and-deconstructors" class="md-nav__link">
+    Constructors and Deconstructors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operator-overloading-with-member-functions" class="md-nav__link">
+    Operator Overloading - with Member Functions**
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operator-overloading-without-member-functions" class="md-nav__link">
+    Operator Overloading - without Member Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overloading-the-cout-operator" class="md-nav__link">
+    Overloading the c.out &lt;&lt; operator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    Templates
+  </a>
+  
+    <nav class="md-nav" aria-label="Templates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#template-functions" class="md-nav__link">
+    Template Functions**
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template-classes" class="md-nav__link">
+    Template Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Template Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-library" class="md-nav__link">
+    Standard Library
+  </a>
+  
+    <nav class="md-nav" aria-label="Standard Library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-io-text" class="md-nav__link">
+    File IO - text
+  </a>
+  
+    <nav class="md-nav" aria-label="File IO - text">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-modes" class="md-nav__link">
+    file modes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-io-binary" class="md-nav__link">
+    File IO - binary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-management" class="md-nav__link">
+    File Management
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unformatted-character-io" class="md-nav__link">
+    Unformatted Character IO
+  </a>
+  
+    <nav class="md-nav" aria-label="Unformatted Character IO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    Output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    Input
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatted-character-io" class="md-nav__link">
+    Formatted Character IO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-functions" class="md-nav__link">
+    String Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    Error Handling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stl-standard-template-library" class="md-nav__link">
+    STL (Standard Template Library)
+  </a>
+  
+    <nav class="md-nav" aria-label="STL (Standard Template Library)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vector" class="md-nav__link">
+    vector
+  </a>
+  
+    <nav class="md-nav" aria-label="vector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iterating" class="md-nav__link">
+    Iterating
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indexing" class="md-nav__link">
+    Indexing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inserting-and-removing" class="md-nav__link">
+    Inserting and Removing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initializing-from-a-c-array" class="md-nav__link">
+    Initializing from a C-array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-with-strings" class="md-nav__link">
+    Example with strings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iostreams" class="md-nav__link">
+    iostreams
+  </a>
+  
+    <nav class="md-nav" aria-label="iostreams">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cin" class="md-nav__link">
+    cin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cout_1" class="md-nav__link">
+    cout
+  </a>
+  
+    <nav class="md-nav" aria-label="cout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#other-modifiers-integers-" class="md-nav__link">
+    Other modifiers (integers):-
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-modifiers-floating-point-" class="md-nav__link">
+    Other modifiers (floating point):-
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-modifers-strings-" class="md-nav__link">
+    Other modifers (strings):-
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-io" class="md-nav__link">
+    file i/o
+  </a>
+  
+    <nav class="md-nav" aria-label="file i/o">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#writing-a-file" class="md-nav__link">
+    writing a file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception-handling" class="md-nav__link">
+    Exception handling
+  </a>
+  
+    <nav class="md-nav" aria-label="Exception handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declaring-set-types-of-exceptions" class="md-nav__link">
+    declaring set types of exceptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#throwing-exceptions" class="md-nav__link">
+    Throwing exceptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#catching-exceptions" class="md-nav__link">
+    Catching exceptions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../quick_notes/" class="md-nav__link">
+      C++ Quick Notes 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-9-2-10" type="checkbox" id="nav-4-9-2-10">
+    
+    <label class="md-nav__link" for="nav-4-9-2-10">
+      C++ Crash Course
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="C++ Crash Course" data-md-level="4">
+      <label class="md-nav__title" for="nav-4-9-2-10">
+        <span class="md-nav__icon md-icon"></span>
+        C++ Crash Course
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../C%2B%2B%20Crash%20Course/crash_course_ch02/" class="md-nav__link">
+      C++ Crash Course - Ch 2 - TYPES
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../C%2B%2B%20Crash%20Course/crash_course_ch03/" class="md-nav__link">
+      C++ Crash Course - Ch 3 - POINTERS and REFERENCES
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../C%2B%2B%20Crash%20Course/crash_course_ch04/" class="md-nav__link">
+      C++ Crash Course - Ch 4 - THE OBJECT LIFE CYCLE
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-9-3" type="checkbox" id="nav-4-9-3">
+    
+    <label class="md-nav__link" for="nav-4-9-3">
+      Java
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Java" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-9-3">
+        <span class="md-nav__icon md-icon"></span>
+        Java
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../java/streams/" class="md-nav__link">
+      Java - Streams 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-9-4" type="checkbox" id="nav-4-9-4">
+    
+    <label class="md-nav__link" for="nav-4-9-4">
+      Lisp
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Lisp" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-9-4">
+        <span class="md-nav__icon md-icon"></span>
+        Lisp
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lisp/bits_of_lisp_01_eval_model/" class="md-nav__link">
+      The Lisp Evaluation Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lisp/land-of-lisp-ch01-ch02/" class="md-nav__link">
+      Land of Lisp - Ch1 & Ch2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lisp/land-of-lisp-ch03/" class="md-nav__link">
+      Land of Lisp - Ch 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lisp/land-of-lisp-ch04/" class="md-nav__link">
+      Land of Lisp - Ch 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lisp/land-of-lisp-ch05/" class="md-nav__link">
+      Land of Lisp - Ch 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lisp/land-of-lisp-ch06.5/" class="md-nav__link">
+      Land of Lisp Learning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lisp/land-of-lisp-keywords/" class="md-nav__link">
+      Land of Lisp 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-9-5" type="checkbox" id="nav-4-9-5">
+    
+    <label class="md-nav__link" for="nav-4-9-5">
+      Python
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Python" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-9-5">
+        <span class="md-nav__icon md-icon"></span>
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/datetime/" class="md-nav__link">
+      'datetime' and 'time'
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/dictionaries/" class="md-nav__link">
+      Dictionaries 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/pytest/" class="md-nav__link">
+      Pytest
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/python/" class="md-nav__link">
+      Python Learning 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/regex/" class="md-nav__link">
+      Regular Expressions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-9-5-6" type="checkbox" id="nav-4-9-5-6">
+    
+    <label class="md-nav__link" for="nav-4-9-5-6">
+      Crash Course Notes
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Crash Course Notes" data-md-level="4">
+      <label class="md-nav__title" for="nav-4-9-5-6">
+        <span class="md-nav__icon md-icon"></span>
+        Crash Course Notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/Crash_Course_Notes/functions/" class="md-nav__link">
+      Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/Crash_Course_Notes/importing/" class="md-nav__link">
+      Importing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/Crash_Course_Notes/input/" class="md-nav__link">
+      Input
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/Crash_Course_Notes/lists/" class="md-nav__link">
+      Lists
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/Crash_Course_Notes/objects/" class="md-nav__link">
+      Objects
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/Crash_Course_Notes/strings/" class="md-nav__link">
+      Strings
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-10" type="checkbox" id="nav-4-10">
+    
+    <label class="md-nav__link" for="nav-4-10">
+      Maven
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Maven" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-10">
+        <span class="md-nav__icon md-icon"></span>
+        Maven
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../maven/01-java-recap/" class="md-nav__link">
+      Recap on Java Compilation and Execution 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../maven/02-maven-basics/" class="md-nav__link">
+      Starting with Maven 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../maven/06-maven-plugins/" class="md-nav__link">
+      Maven Plugins 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../maven/maven-build-lifecycles/" class="md-nav__link">
+      Maven Build Lifecycles 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../maven/misc_notes/" class="md-nav__link">
+      Misc Notes 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../maven/resources/" class="md-nav__link">
+      Maven Resources
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-11" type="checkbox" id="nav-4-11">
+    
+    <label class="md-nav__link" for="nav-4-11">
+      Tools
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Tools" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-11">
+        <span class="md-nav__icon md-icon"></span>
+        Tools
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tools/intellij/" class="md-nav__link">
+      Intellij IDEA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tools/vi_notes/" class="md-nav__link">
+      VIM  🚧 🚧
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tools/visual_studio_debugging/" class="md-nav__link">
+      Visual Studio, Debugging 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tools/vs_code_learning/" class="md-nav__link">
+      VS Code 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pointers" class="md-nav__link">
+    Pointers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+    <nav class="md-nav" aria-label="References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#differences-between-pointers-and-references" class="md-nav__link">
+    differences between pointers and references
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitive-array" class="md-nav__link">
+    Primitive Array
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitive-string-or-c-string" class="md-nav__link">
+    Primitive String (or C-String)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outputting-text" class="md-nav__link">
+    Outputting Text
+  </a>
+  
+    <nav class="md-nav" aria-label="Outputting Text">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#printf-and-puts" class="md-nav__link">
+    printf() and puts()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cout" class="md-nav__link">
+    cout
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-type-sizes" class="md-nav__link">
+    Data Type Sizes
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Type Sizes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-sizes" class="md-nav__link">
+    Standard sizes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#escape-sequences" class="md-nav__link">
+    Escape Sequences
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qualifiers" class="md-nav__link">
+    Qualifiers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bitfields" class="md-nav__link">
+    Bitfields
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enum" class="md-nav__link">
+    Enum
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#union" class="md-nav__link">
+    Union
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typedefs-autotype-and-nullptr" class="md-nav__link">
+    Typedefs, Autotype and Nullptr
+  </a>
+  
+    <nav class="md-nav" aria-label="Typedefs, Autotype and Nullptr">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autotype-c11-onwards" class="md-nav__link">
+    autotype (C++11 onwards)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nullptr-c11-onwards" class="md-nav__link">
+    nullptr (C++11 onwards)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    Operators
+  </a>
+  
+    <nav class="md-nav" aria-label="Operators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logical-operators" class="md-nav__link">
+    Logical operators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitwise-operators" class="md-nav__link">
+    Bitwise operators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-operators" class="md-nav__link">
+    Memory Operators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-pointers" class="md-nav__link">
+    Function Pointers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variable-number-of-parameters" class="md-nav__link">
+    Variable number of parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objects-classes" class="md-nav__link">
+    Objects &amp; Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Objects &amp; Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#const-classes" class="md-nav__link">
+    Const Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructors-and-deconstructors" class="md-nav__link">
+    Constructors and Deconstructors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operator-overloading-with-member-functions" class="md-nav__link">
+    Operator Overloading - with Member Functions**
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operator-overloading-without-member-functions" class="md-nav__link">
+    Operator Overloading - without Member Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overloading-the-cout-operator" class="md-nav__link">
+    Overloading the c.out &lt;&lt; operator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    Templates
+  </a>
+  
+    <nav class="md-nav" aria-label="Templates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#template-functions" class="md-nav__link">
+    Template Functions**
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template-classes" class="md-nav__link">
+    Template Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Template Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-library" class="md-nav__link">
+    Standard Library
+  </a>
+  
+    <nav class="md-nav" aria-label="Standard Library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-io-text" class="md-nav__link">
+    File IO - text
+  </a>
+  
+    <nav class="md-nav" aria-label="File IO - text">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-modes" class="md-nav__link">
+    file modes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-io-binary" class="md-nav__link">
+    File IO - binary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-management" class="md-nav__link">
+    File Management
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unformatted-character-io" class="md-nav__link">
+    Unformatted Character IO
+  </a>
+  
+    <nav class="md-nav" aria-label="Unformatted Character IO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    Output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    Input
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatted-character-io" class="md-nav__link">
+    Formatted Character IO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-functions" class="md-nav__link">
+    String Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    Error Handling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stl-standard-template-library" class="md-nav__link">
+    STL (Standard Template Library)
+  </a>
+  
+    <nav class="md-nav" aria-label="STL (Standard Template Library)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vector" class="md-nav__link">
+    vector
+  </a>
+  
+    <nav class="md-nav" aria-label="vector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iterating" class="md-nav__link">
+    Iterating
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indexing" class="md-nav__link">
+    Indexing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inserting-and-removing" class="md-nav__link">
+    Inserting and Removing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initializing-from-a-c-array" class="md-nav__link">
+    Initializing from a C-array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-with-strings" class="md-nav__link">
+    Example with strings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iostreams" class="md-nav__link">
+    iostreams
+  </a>
+  
+    <nav class="md-nav" aria-label="iostreams">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cin" class="md-nav__link">
+    cin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cout_1" class="md-nav__link">
+    cout
+  </a>
+  
+    <nav class="md-nav" aria-label="cout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#other-modifiers-integers-" class="md-nav__link">
+    Other modifiers (integers):-
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-modifiers-floating-point-" class="md-nav__link">
+    Other modifiers (floating point):-
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-modifers-strings-" class="md-nav__link">
+    Other modifers (strings):-
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-io" class="md-nav__link">
+    file i/o
+  </a>
+  
+    <nav class="md-nav" aria-label="file i/o">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#writing-a-file" class="md-nav__link">
+    writing a file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception-handling" class="md-nav__link">
+    Exception handling
+  </a>
+  
+    <nav class="md-nav" aria-label="Exception handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declaring-set-types-of-exceptions" class="md-nav__link">
+    declaring set types of exceptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#throwing-exceptions" class="md-nav__link">
+    Throwing exceptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#catching-exceptions" class="md-nav__link">
+    Catching exceptions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="essential-c">Essential C++ 👷🏼‍♂️👷🏼‍♀️</h1>
+<p>(from LinkedIn Learning course)</p>
+<h2 id="pointers">Pointers</h2>
+<pre><code class="language-c++">int *ip;        // allocates space for a pointer to an int
+int x = 42;
+
+ip = &amp;x;        // &amp; reference operator (or 'address of' operator) - address of x is placed in ip
+
+int y = *ip;    // copy value of x into y
+</code></pre>
+<h2 id="references">References</h2>
+<pre><code class="language-c++">int &amp;y = x;    // y is a reference of x
+</code></pre>
+<h3 id="differences-between-pointers-and-references">differences between pointers and references</h3>
+<ul>
+<li>references don't need an operator to dereference them. <em>(this can lead to side effects when calling functions with referenced params)</em></li>
+<li>references cannot be changed to point to a different variable</li>
+</ul>
+<h2 id="primitive-array">Primitive Array</h2>
+<pre><code class="language-c++">int ia[5];
+int *ip = ia;
+*ip = 2;        // ia[0] = 2
+++ip;
+*ip = 3;        // ia[1] = 3
+*(++ip) = 4;    // ia[2] = 4
+</code></pre>
+<p>Can initialise an array with an initialiser list, e.g.</p>
+<pre><code class="language-c++">int ia[5] = {0, 1, 2, 3, 4};    // number in [] is optional
+int ia[] = {0, 1, 2, 3};        // sizes the array automatically
+
+int numbers[8] = {};            // creates an array filled with empty ints (i.e., set to 0)
+
+int numbers[10];                // declares the array, but does not initialise it.
+
+string animals[][3] = {         // multidimension array
+    {&quot;Fox&quot;, &quot;Dog&quot;, &quot;Jackal&quot;},
+    {&quot;Tiger&quot;,&quot;Lynx&quot;,&quot;Tabby&quot;}
+};
+
+sizeof(string); =&gt; 8         // not dependent on how many chars in the string
+sizeof(animals); =&gt; 48       // size of entire array
+sizeof(animals[0]); =&gt; 24    // size of first row
+
+sizeof(animals) / sizeof(animals[0]) = number of rows
+
+sizeof(animals[0]) / sizeof(string) = number of elements in each row // possible to use animals[0][0] instead of string
+</code></pre>
+<h2 id="primitive-string-or-c-string">Primitive String (or C-String)</h2>
+<p>(not the same as an STL String)</p>
+<pre><code class="language-c++">char name[] = &quot;Rob&quot;;       // this string is zero terminated
+const char * s = &quot;Rob&quot;;    // another method of declaring a C String
+</code></pre>
+<p>must be a const.  const refers to the character being pointed at - not the pointer.  The pointer can change to point to another string.  const char * const ptr (this pointer CANNOT change)</p>
+<p>Can concatenate literal strings with a space, e.g. char day[] = "Sun" "day";</p>
+<pre><code class="language-c++">for(char *cp = name; *cp; ++cp) {
+    printf(&quot;%c\n&quot;, *cp);
+}
+</code></pre>
+<p>Or with a range based loop (C++11 onwards)</p>
+<pre><code class="language-c++">for(char c:name) {
+    if(c==0) break;
+    printf(&quot;%c\n&quot;,c);
+}
+</code></pre>
+<h2 id="outputting-text">Outputting Text</h2>
+<h3 id="printf-and-puts"><code>printf()</code> and <code>puts()</code></h3>
+<pre><code class="language-c++">#include &lt;cstdio&gt;
+printf(...);
+puts(...);
+</code></pre>
+<h3 id="cout"><code>cout</code></h3>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+std::cout &lt;&lt; &quot;Hello World&quot; &lt;&lt; endl;
+</code></pre>
+<p><code>cout</code> has a larger footprint than puts &amp; printf</p>
+<h2 id="data-type-sizes">Data Type Sizes</h2>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>char</td>
+<td>8 bits <em>(may or may not be signed)</em></td>
+</tr>
+<tr>
+<td>short int</td>
+<td>16 bits</td>
+</tr>
+<tr>
+<td>int</td>
+<td>32 bits</td>
+</tr>
+<tr>
+<td>long int</td>
+<td>32 or 64 bits</td>
+</tr>
+<tr>
+<td>long long int</td>
+<td>64 or 128 bits</td>
+</tr>
+</tbody>
+</table>
+<p>(ints are by default signed - unless otherwise stated)</p>
+<h3 id="standard-sizes">Standard sizes</h3>
+<p>(if you need a specific size regardless of platform)</p>
+<pre><code class="language-c++">#include &lt;cstdint&gt;
+int8_t     uint8_t
+int16_t    uint16_t
+int32_t    uint32_t
+int64_t    uint64_t
+</code></pre>
+<h2 id="escape-sequences">Escape Sequences</h2>
+<p><code>\"</code>  <code>\'</code>  <code>\\</code>  <code>\x40</code>  <code>\n</code>  <code>\t</code>  <code>\u03bc</code> (unicode character)</p>
+<h2 id="qualifiers">Qualifiers</h2>
+<pre><code class="language-c++">const
+volatile
+mutable
+static
+register
+extern
+</code></pre>
+<p><code>volatile</code> -&gt; may be changed by another process<br />
+<code>statics</code> are NOT reinitialised once they are set<br />
+<code>register</code> -&gt; a suggestion that the variable should be stored in a register</p>
+<h2 id="bitfields">Bitfields</h2>
+<pre><code class="language-c++">struct prefs {
+    bool isTall : 1;
+    bool hasHair : 1;
+    bool isADude : 1;
+    bool canRockOut : 1;
+    unsigned int numberOfLegs : 4;
+}
+</code></pre>
+<p>Number after the colon is the number of bits to assign to this datum.  There is no guarantee about how much space is set aside - it's dependent on the compiler.  This can be an issue in threading... all bitfields must be read to and written to at the same time.</p>
+<h2 id="enum">Enum</h2>
+<p>Enums in C++ are essentially a collection of constants.</p>
+<pre><code class="language-c++">enum card_suit : **uint8_t** { SPADE, HEART, DIAMOND, CLUB};
+enum card_rank {ACE = 1, JACK = 11, QUEEN, KING };
+</code></pre>
+<p>Can specify the size of the enum (e.g. <code>uint8_t</code> in the above) instead of the default of <code>int</code>.</p>
+<p>Can specify the value of the enum, (e.g. <code>ACE =1</code> , <code>JACK =11</code>) and after that the count continues (so QUEEN will be 12 and KING will be 13)</p>
+<pre><code class="language-c++">struct Card {
+    int rank; int suit;
+}
+Card deck[52] = { {ACE, SPADE}, {2, SPADE}, …. }
+</code></pre>
+<h2 id="union">Union</h2>
+<p>Using the same memory space for different types.  e.g.</p>
+<pre><code class="language-c++">union ipv4 {
+    uint32_t i32;
+    struct {
+        uint8_t a; uint8_t b; uint8_t c; uint8_t d;
+    } octets;
+}
+
+union ipv4 hos;
+
+host.octets = {192, 168, 0, 1};
+</code></pre>
+<h2 id="typedefs-autotype-and-nullptr">Typedefs, Autotype and Nullptr</h2>
+<pre><code class="language-c++">typedef unsigned char points_t;
+</code></pre>
+<p><code>points_t</code> is an alias for <code>unsigned char</code>. It’s common to add <code>_t</code> to indicate it’s a <code>typedef</code>.</p>
+<h3 id="autotype-c11-onwards">autotype (C++11 onwards)</h3>
+<pre><code class="language-c++">auto x= func();
+</code></pre>
+<p>Works like C# <code>var</code> - can use it in place of complicated definitions (e.g. instead of <code>vector&lt;int&gt;::iterator</code>)</p>
+<h3 id="nullptr-c11-onwards">nullptr (C++11 onwards)</h3>
+<p>A pointer of 0 that can be used for any pointer (and only pointers)</p>
+<h2 id="operators">Operators</h2>
+<p><code>+=</code>
+<code>-=</code>
+<code>*=</code>
+<code>/=</code>
+<code>%=</code>
+<code>++j</code>
+<code>j++</code> (prefix is slightly more optimised than postfix)</p>
+<h3 id="logical-operators">Logical operators</h3>
+<p><code>&amp;&amp;</code>
+<code>||</code>
+<code>!</code></p>
+<h3 id="bitwise-operators">Bitwise operators</h3>
+<p><code>&amp;</code>
+<code>|</code>
+<code>^</code>
+<code>~</code>(invert)
+<code>&lt;&lt;</code>
+<code>&gt;&gt;</code></p>
+<h3 id="memory-operators">Memory Operators</h3>
+<pre><code class="language-c++">#include &lt;new&gt;    // for bad_alloc
+
+long int * ip;
+try {
+    ip = new long int[300];
+} catch(std::bad_alloc &amp; ba) {
+    fprintf(stderr, …);
+    return 1;
+}
+
+//…
+
+delete [] ip; // only use square brackets if created more than 1 object
+</code></pre>
+<p>Or without using exceptions…</p>
+<pre><code class="language-c++">ip = new (nothrow) long int[300];
+if (ip==nullptr) {
+    // handle error here
+}
+
+size_t y = sizeof x;    // returns the size of x in bytes
+
+size_t z = sizeof(int);    // brackets are required for types (not needed for vars)
+</code></pre>
+<p><code>“%zd”</code> is the string format for size_t</p>
+<pre><code class="language-c++">#include &lt;typeinfo&gt;
+    typeid(…);
+    typeid(…).name();
+</code></pre>
+<h2 id="functions">Functions</h2>
+<p>call by reference</p>
+<pre><code class="language-c++">f(&amp;i); // address of (or reference) operator
+
+void f(int *p) {
+    ++(*p);        // * &lt;- pointer dereference operator
+}
+
+void f(int &amp;x) {    // using ref instead of pointer
+    ++x;            // more dangerous - possible to change value of
+}                   // original value without caller being aware of side effect
+
+void f(const int *i) {    // protects value from being changed
+    ...
+}
+</code></pre>
+<p>Functions must be declared before they are called.</p>
+<p><strong>Local</strong> variables are stored on the stack.  It’s a good idea not to declare large objects as locals.</p>
+<p><strong>Static</strong> variables are only initialised once (further calls to an initialiser do not update the value)</p>
+<pre><code class="language-c++">const string &amp; func() {
+    const static string s= “Hello World!”;
+    return s;
+}
+
+const string s = func();
+</code></pre>
+<h2 id="function-pointers">Function Pointers</h2>
+<pre><code class="language-c++">void func() { … }
+void (*pfunc)() = func;    // declares a function pointer
+
+pfunc();    // calls func() - also (*pfunc)(); is allowable - this is the C version
+</code></pre>
+<p>Use - Jumptable..</p>
+<pre><code class="language-c++">void fa() {…}
+void fb() {…}
+void fc() {…}
+
+void (*funcs[])() = { fa, fb, fc }
+
+funcs[1]();     // calls fb - this is useful for menu options, etc.
+</code></pre>
+<p>Finding the size of an array…</p>
+<pre><code class="language-c++">int array_size = sizeof(funcs) / sizeof(funcs[0]);
+</code></pre>
+<h2 id="variable-number-of-parameters">Variable number of parameters</h2>
+<pre><code class="language-c++">#include &lt;cstdarg&gt;
+
+double average(const int count, …) {
+    va_list ap;
+    double total = 0.0;
+
+    **va_start**(ap, count);            // va_start needs a matching va_end
+    for(int i=0; i&lt;count; ++i) {
+        total += va_arg(ap, double);    // double is the type in this context
+    }
+    **va_end**(ap);                     // va_end needs a matching va_start
+    return total / count;
+}
+</code></pre>
+<pre><code class="language-c++">#include &lt;cstdarg&gt;
+
+int message(const char *fmt, …) {
+    va_list ap;
+    va_start(ap, fmt);
+    int rc = vfprintf(stdout, **fmt, ap**);    // passing a va list to another function
+    puts(“”);
+    va_end(ap);
+    return rc;
+}
+</code></pre>
+<p>Alternatively...</p>
+<pre><code class="language-c++">    char buffer[2048];
+    va_list ap;
+    va_start(ap, fmt);
+    vsprintf(buffer,fmt,ap);
+    va_end(ap);
+</code></pre>
+<h2 id="objects-classes">Objects &amp; Classes</h2>
+<pre><code class="language-c++">class Class1 {
+    int i;    // private section (could have private on line above)
+
+public:
+    Class1();    // ctor -&gt; constructor
+    ~Class1();    // dtor -&gt; destructor
+}
+</code></pre>
+<p>The class is essentially a struct with methods.  Can replace a struct with a class and the code will still work.  Only different is the default access modifier.</p>
+<table>
+<thead>
+<tr>
+<th>item</th>
+<th>default access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>struct</td>
+<td>public</td>
+</tr>
+<tr>
+<td>class</td>
+<td>private</td>
+</tr>
+</tbody>
+</table>
+<p>Considered best practice to separate implementation of methods (in a <code>.cpp</code> file) from interface (in a <code>.h</code> file)</p>
+<h3 id="const-classes">Const Classes</h3>
+<p>When a class is declared as const, it needs const safe methods...</p>
+<pre><code class="language-c++">const C1 o1;
+
+o1.getValue();
+</code></pre>
+<p>This will need the following function…</p>
+<pre><code class="language-c++">int C1::getValue() const;    // cannot change C1’s members in this function
+</code></pre>
+<p>This is considered different to the (mutable) function…</p>
+<pre><code class="language-c++">int C1::getValue();
+</code></pre>
+<p>The compiler will call the relevant function depending on if the object is defined as a const or mutable.  This is a form of overloading.</p>
+<p>If you have a function in a class that doesn’t change member values in the object, it’s best to always declare it as const safe.</p>
+<h3 id="constructors-and-deconstructors">Constructors and Deconstructors</h3>
+<pre><code class="language-c++">class Animal {
+    string _Type = &quot;&quot;;
+    string _Name = &quot;&quot;;
+public:
+    Animal();                           // default constructor
+    Animal(const string &amp;type, const string &amp;name);
+
+    Animal(const Animal &amp;);             // copy constructor (called by assignment, e.g. Animal b = a; )
+
+    ~Animal();
+}
+
+Animal::Animal(const string &amp; type, const string &amp; name): _Type(type), _Name(name) {};
+</code></pre>
+<h3 id="operator-overloading-with-member-functions">Operator Overloading - with Member Functions**</h3>
+<pre><code class="language-c++">class Rational {
+    int _n;
+    int _d;
+public:
+
+    Rational(int num = 0, int den = 1): _n(num), _d(den) {};        // compiler will use this to convert an int to a Rational
+
+    Rational(const Rational &amp;rhs): _n(rhs._n), _d(rhs._d) {};       // copy constructor
+
+    Rational &amp; operator = (const Rational &amp;);               // not const safe, assignment changes member values
+
+    Rational operator + (const Rational &amp;) const;           // this is const safe as it returns the result of the operation, doesn’t change &quot;this&quot;
+}
+
+Rational &amp; Rational::operator = (const Rational &amp;rhs) {
+    if (this!=rhs) {
+        _n = rhs._n;
+        _d = rhs._d;
+    }
+
+    return * this;      // we return a reference to “this” - allows chaining of assignments:  x = y = z;
+
+}
+
+Rational Rational::operator + (const Rational &amp;rhs) {           // returns a new object - can’t return a ref to a temp (stack based) object
+    return Rational(_n * rhs._d + _d * rhs._n, _d * rhs._d);    // the new object is destroyed after the overloaded operator is evaluated
+}
+</code></pre>
+<h3 id="operator-overloading-without-member-functions">Operator Overloading - without Member Functions</h3>
+<p>Non member function overloading is useful for when the LHS of an expression is not the type of your class.  e.g.</p>
+<pre><code class="language-c++">Rational = int + Rational    &lt;- we haven’t got an overloaded + operator for int -&gt; Rational
+
+Rational operator + (const Rational &amp;lhs, const Rational &amp;rhs) {
+
+    return Rational(lhs.numerator() * rhs.denominator() + lhs.denominator() * rhs.numerator(), lhs.denominator() * rhs.numerator() );
+
+}
+</code></pre>
+<p>This is defined outside of the scope of the class.  Now when Rational = int + Rational is called, the compile will use the implicit constructor to convert the int to a Rational and then call the + operator overload.</p>
+<p>Note that this method (as it is outside of the class cannot access the private members of the class).</p>
+<h3 id="overloading-the-cout-operator">Overloading the <code>c.out</code> <code>&lt;&lt;</code> operator</h3>
+<pre><code class="language-c++">std::ostream &amp; operator &lt;&lt; (std::stream &amp;o, const Rational &amp;r) {
+    if(r.denominator()==1)
+        return o &lt;&lt; r.numerator();
+    else
+        return o &lt;&lt; r.numerator() &lt;&lt; “/“ &lt;&lt; r.denominator();
+}
+</code></pre>
+<h2 id="templates">Templates</h2>
+<p>Template specialisation -&gt; done at compile time for each set of data types.</p>
+<p>Caveats - larger executables, longer compile times, confusing error messages</p>
+<h3 id="template-functions">Template Functions**</h3>
+<pre><code class="language-c++">template&lt;typename T&gt;    // &lt;typename T&gt; is the template argument list
+T maxof(T a, T b) {
+    return (a&gt;b) ? a : b;
+}
+
+int m = maxof&lt;int&gt;(7, 9);
+</code></pre>
+<p>Cannot define a template within a block.  Type safe as the compiler does the substitution at compile time (so if a type that doesn’t have a <code>&gt;</code> operator is used, the compiler will complain).</p>
+<h2 id="template-classes">Template Classes</h2>
+<p>(Commonly used for containers)</p>
+<pre><code class="language-c++">template&lt;typename T&gt;
+class bwstack {
+private:
+    T * _stkptr;
+public:
+    T &amp; push(const T &amp;);
+    T &amp; pop();
+}
+
+template&lt;typename T&gt;
+T &amp; bwstack::push(const T &amp;item) { … }
+</code></pre>
+<h3 id="usage">Usage</h3>
+<pre><code class="language-c++">bwstack&lt;int&gt; stack;
+</code></pre>
+<h2 id="standard-library">Standard Library</h2>
+<p>Common system level tasks</p>
+<p>Covering</p>
+<ul>
+<li>File IO</li>
+<li>C-Strings</li>
+<li>Error Handling</li>
+<li>Date and Time</li>
+<li>Utilities</li>
+<li>Maths</li>
+<li>Localization</li>
+<li>Process control</li>
+<li>System services</li>
+</ul>
+<p>uses <code>namespace std</code></p>
+<h3 id="file-io-text">File IO - text</h3>
+<pre><code class="language-c++">FILE * f = fopen(filename, &quot;r&quot;);    // reading a text file
+char buf[1024];
+while(fgets(buf, 1024, f)) {
+    puts(buf);
+}
+
+FILE * fw = fopen(filename, &quot;w&quot;);    // writing a text file
+for(int i= 0; i&lt;99; ++i) {
+    fputs(&quot;Hello World!&quot;, fw);
+}
+
+remove(filename);    // removes the file
+</code></pre>
+<h4 id="file-modes">file modes</h4>
+<table>
+<thead>
+<tr>
+<th>flag</th>
+<th>mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r</td>
+<td>read from start <em>(fail if doesn't exist)</em></td>
+</tr>
+<tr>
+<td>r+</td>
+<td>open for read/write, read from start - <em>(fail if doesn't exist)</em></td>
+</tr>
+<tr>
+<td>w</td>
+<td>create file for writing from start <em>(destroy any existing file)</em></td>
+</tr>
+<tr>
+<td>w+</td>
+<td>create file for read/write from start <em>(destroy any existing file)</em></td>
+</tr>
+<tr>
+<td>a</td>
+<td>write from end <em>(create if doesn't exist)</em></td>
+</tr>
+<tr>
+<td>a+</td>
+<td>read/write from end <em>(create if doesn't exist)</em></td>
+</tr>
+</tbody>
+</table>
+<h3 id="file-io-binary">File IO - binary</h3>
+<pre><code class="language-c++">FILE * fb = fopen(fn, &quot;wb&quot;);
+
+itemsWritten = fwrite(&amp;buffer, sizeOfElement, numberOfElements, fb);
+itemsRead = fread(&amp;buffer, sizeOfElement, numberOfElements, fb);
+</code></pre>
+<h3 id="file-management">File Management</h3>
+<pre><code class="language-c++">#include &lt;cstdio&gt;
+using namespace std;
+</code></pre>
+<p>Creating a file...</p>
+<pre><code class="language-c++">FILE * fh = fopen(&quot;newfile&quot;,&quot;w&quot;);
+fclose(fh);
+</code></pre>
+<p>Renaming a file…</p>
+<pre><code class="language-c++">rename(filename1, filename2);
+</code></pre>
+<h3 id="unformatted-character-io">Unformatted Character IO</h3>
+<h4 id="output">Output</h4>
+<pre><code class="language-c++">fputs(“Hello World”, stdout);    // unlike puts this doesn’t add an EOL at the end
+</code></pre>
+<h4 id="input">Input</h4>
+<pre><code class="language-c++">const int bufsize = 256;
+static char buf[bufsize];
+
+fputs(&quot;prompt: &quot;, stdout);
+
+flush(stdout);                  // flushes the stream IO so that it’s written before you read from stdin
+
+fgets(buf, bufsize, stdin);    // gets() is a variant of gets() And NEVER use it - it can be used to break computer security
+</code></pre>
+<h3 id="formatted-character-io">Formatted Character IO</h3>
+<p>Output - uses <code>printf</code> and <code>fprintf</code></p>
+<p>Format specifiers</p>
+<table>
+<thead>
+<tr>
+<th>token</th>
+<th>type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%d</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>%ld</td>
+<td>long integer</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>c-string</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>floating point</td>
+</tr>
+<tr>
+<td>%p</td>
+<td>pointer</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>char</td>
+</tr>
+<tr>
+<td>%%</td>
+<td>percent</td>
+</tr>
+<tr>
+<td>%zd</td>
+<td>size_t</td>
+</tr>
+</tbody>
+</table>
+<h3 id="string-functions">String Functions</h3>
+<pre><code class="language-c++">#include &lt;cstring&gt;
+using namespace;
+
+*Functions*
+strncpy(*dest, *src, size of dest);
+strncat(*dest, *src, size of dest);
+strnlen(*src, max size);
+
+strcmp(*str1, *str2) -&gt; returns 0 if strings are the same
+strchar(*str, char) -&gt; returns pointer to char in string, or null if not found
+strstr(*str, *substr) -&gt; returns pointer to subset in str, or null if not found
+</code></pre>
+<h3 id="error-handling">Error Handling</h3>
+<pre><code class="language-c++">#include &lt;cerrno&gt;    &lt;- provides access to **errno**
+#include &lt;cstring&gt;    &lt;- required for the strerror function
+</code></pre>
+<p>If <code>errno</code> is 0, then no error, otherwise <code>errno</code>'s value will indicate which error has occurred.</p>
+<p><code>strerror(errno)</code>   &lt;- gets the string associated with the error number</p>
+<p>(<code>perror(str)</code> reports the error along with it’s string parameter straight to the stderr console)</p>
+<h2 id="stl-standard-template-library">STL (Standard Template Library)</h2>
+<p>Containers, etc..</p>
+<ul>
+<li>vector</li>
+<li>list (double linked list)</li>
+<li>set</li>
+<li>map</li>
+<li>stacks, queues and deques</li>
+<li>strings</li>
+<li>iostreams</li>
+</ul>
+<h3 id="vector">vector</h3>
+<p>Essentially an OO-array with some cool extra features.</p>
+<pre><code class="language-c++">#include &lt;vector&gt;
+vector&lt;int&gt; vints = {1,2,3,4,5,6,7,8,9};
+
+vints.size() - returns size of vector array
+vints.front() - returns first element
+vints.last() - returns last element
+</code></pre>
+<h4 id="iterating">Iterating</h4>
+<pre><code class="language-c++">vector&lt;int&gt;::iterator it_begin = vints.begin();
+vector&lt;int&gt;::iterator it_end = vints.end();
+for( auto it = it_begin; it &lt; it_end; ++it) { do stuff with *it }
+
+for(int &amp; i : vints) { do stuff with i }
+</code></pre>
+<h4 id="indexing">Indexing</h4>
+<pre><code class="language-c++">vints[5]
+vints.at(5)
+</code></pre>
+<h4 id="inserting-and-removing">Inserting and Removing</h4>
+<pre><code class="language-c++">vints.insert(vints.begin() + 5, &lt;item to insert&gt; );    // inserts item at 5th position
+
+vints.remove(vints.begin() + 5);    // removes item at 5th position
+vints.push_back(&lt;item to add);      // adds item at back of
+</code></pre>
+<h4 id="initializing-from-a-c-array">Initializing from a C-array</h4>
+<pre><code class="language-c++">const static size_t size = 10;
+int ia[size] = {1, 2, 3, 4,5 ,6, 7 ,8 ,9 ,10 };
+vector&lt;int&gt; vints2 = {ia, ia + size};
+</code></pre>
+<h4 id="example-with-strings">Example with strings</h4>
+<pre><code class="language-c++">vector&lt;string&gt; vstrings = { &quot;one&quot;, &quot;two&quot;, “three&quot; };
+for( string &amp; s : vstrings ) {
+    cout &lt;&lt; s &lt;&lt; endl;
+}
+</code></pre>
+<h3 id="string">string</h3>
+<pre><code class="language-c++">string s1 = &quot;This is a string&quot;;
+s1.size()      // size is used for all the other STL containers
+s1.length()    // length is an alias for size when working with strings
+
+s1 + s2     // concatenated strings
+s1 == s2    // comparison (can also use &lt; and &gt; )
+s1 = s2     // assignment
+
+for (char c : s1) { cout &lt;&lt; c &lt;&lt; &quot; &quot;: }
+
+string::iterator it;
+it = s1.begin() + 5;
+s1.insert(it, ‘X’);
+s1.erase(it);
+
+s1.replace(5, 2, &quot;ain’t&quot;);    // replaces the two letters at position 5 &amp; 6 with &quot;ain’t&quot;)
+
+s1.substr(5, 3);              // returns a string of the 3 chars are positions 5 to 7
+
+size_t pos = s1.find(&quot;s&quot;);    // find the first occurrence of &quot;s&quot;
+size_t pos = s1.rfind(&quot;s&quot;);   // find the last occurrence of &quot;s&quot;
+</code></pre>
+<h3 id="iostreams">iostreams</h3>
+<h4 id="cin">cin</h4>
+<pre><code class="language-c++">cin &gt;&gt; x;
+</code></pre>
+<p><code>cin</code> will only read the first word, to read the whole line you need...</p>
+<pre><code class="language-c++">char buf[128];
+cin.getline(buf,sizeof(buf));
+</code></pre>
+<h4 id="cout_1">cout</h4>
+<pre><code class="language-c++">cout &lt;&lt; hex &lt;&lt; endl;
+</code></pre>
+<p>note - <code>endl</code> presents the end of line char and also flushes the buffer ( <code>&lt;&lt; flush</code> also flushes the buffer)</p>
+<h5 id="other-modifiers-integers-">Other modifiers (integers):-</h5>
+<ul>
+<li><code>oct</code> (octal)</li>
+<li><code>dec</code> (decimal)</li>
+<li><code>hex</code> (hexadecimal)</li>
+<li><code>showbase</code> ([precedes <code>hex</code> with <code>0x</code> and octal with <code>0</code>])</li>
+<li><code>noshowbase</code></li>
+</ul>
+<h5 id="other-modifiers-floating-point-">Other modifiers (floating point):-</h5>
+<ul>
+<li><code>fixed</code> (fixed point)</li>
+<li><code>scientific</code> notiation</li>
+<li><code>setprecision(no. of points)</code></li>
+</ul>
+<pre><code class="language-c++">cout.unsetf(ios_base::floatfield);    // sets floating point back to default
+</code></pre>
+<h5 id="other-modifers-strings-">Other modifers (strings):-</h5>
+<ul>
+<li><code>setw(64)</code> - sets width to 64</li>
+<li><code>right</code> - right aligns text</li>
+<li><code>setfill('-')</code> - fills leading spaces with '-'</li>
+<li><code>left</code> = left aligns text</li>
+</ul>
+<h3 id="file-io">file i/o</h3>
+<h4 id="writing-a-file">writing a file</h4>
+<pre><code class="language-c++">ofstream ofile(filename);        // open file for writing
+ofile &lt;&lt; &quot;Hello World&quot; &lt;&lt; endl;
+
+reading a file
+char buf[128];
+
+ifstream infile(filename);
+while (infile.good()) {
+    infile.getline(buf, sizeof(buf));
+    cout &lt;&lt; buf &lt;&lt; endl;
+}
+infile.close();
+</code></pre>
+<h3 id="exception-handling">Exception handling</h3>
+<pre><code class="language-c++">#include &lt;exception&gt;
+
+class E : public exception {
+    const char * msg;
+    E();
+public:
+    E(const char * s) throw() : msg(s) {};
+    const char * what() const throw() { return msg;}
+};
+</code></pre>
+<h4 id="declaring-set-types-of-exceptions">declaring set types of exceptions</h4>
+<pre><code class="language-c++">const E e_ouch(&quot;ouch!&quot;);
+const E e_bad(&quot;bad&quot;);
+</code></pre>
+<h4 id="throwing-exceptions">Throwing exceptions</h4>
+<pre><code class="language-c++">throw E(&quot;this is an error message”);
+</code></pre>
+<p>Or</p>
+<pre><code class="language-c++">throw e_bad;
+</code></pre>
+<h4 id="catching-exceptions">Catching exceptions</h4>
+<p>should look pretty familiar</p>
+<pre><code class="language-c++">try {
+    brokenFunction();
+} catch(E &amp; e) {
+    c.out &lt;&lt; e.what() &lt;&lt; endl;
+}
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../design_patterns/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                C++ Design Patterns 👷🏼‍♂️👷🏼‍♀️
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../quick_notes/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                C++ Quick Notes 👷🏼‍♂️👷🏼‍♀️
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../../assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c1ccee15.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

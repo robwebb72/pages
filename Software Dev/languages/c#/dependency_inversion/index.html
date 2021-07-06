@@ -366,18 +366,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/SOLID_Principles/" class="md-nav__link">
-      SOLID Principles 👷🏼‍♂️👷🏼‍♀️
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../coding/clean-code-notes/" class="md-nav__link">
       Clean Code Notes
     </a>
@@ -429,6 +417,44 @@
     <a href="../../../coding/tdd/" class="md-nav__link">
       Test Driven Development (TDD)
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2-6" type="checkbox" id="nav-4-2-6">
+    
+    <label class="md-nav__link" for="nav-4-2-6">
+      Solid
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Solid" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-6">
+        <span class="md-nav__icon md-icon"></span>
+        Solid
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../coding/solid/SOLID-Principles/" class="md-nav__link">
+      SOLID Principles 👷🏼‍♂️👷🏼‍♀️
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -895,9 +921,52 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        C# Dependency Inversion - Example 👷🏼‍♂️👷🏼‍♀️
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
     <a href="./" class="md-nav__link md-nav__link--active">
       C# Dependency Inversion - Example 👷🏼‍♂️👷🏼‍♀️
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-carpet-class" class="md-nav__link">
+    The carpet class
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-action-interface" class="md-nav__link">
+    The Action interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-possible-actions" class="md-nav__link">
+    The possible actions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -1792,6 +1861,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-carpet-class" class="md-nav__link">
+    The carpet class
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-action-interface" class="md-nav__link">
+    The Action interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-possible-actions" class="md-nav__link">
+    The possible actions
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1811,6 +1909,8 @@
     wallart.PerformActions();
 }
 </code></pre>
+<h2 id="the-carpet-class">The carpet class</h2>
+<p>This class can have a number of actions attached to it</p>
 <pre><code class="language-csharp">public class Carpet {
     public List&lt;IAction&gt; Actions = new List&lt;IAction&gt;();
 
@@ -1825,10 +1925,12 @@
     }
 }
 </code></pre>
+<h2 id="the-action-interface">The Action interface</h2>
 <pre><code class="language-csharp">public interface IAction {
     void PerformAction();
 }
 </code></pre>
+<h2 id="the-possible-actions">The possible actions</h2>
 <pre><code class="language-csharp">public class Sweepable : IAction {
     public void Sweep() {
         // do stuff
@@ -1838,12 +1940,13 @@
     }
 }
 
+
 public class ArtExhibit : IAction {
     public void Exhibit() {
         // do stuff
     }
     public void PerformAction() {
-
+        this.Exhibit();
     }
 }
 </code></pre>

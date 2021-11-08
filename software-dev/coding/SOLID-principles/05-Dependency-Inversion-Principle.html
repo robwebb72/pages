@@ -1231,18 +1231,30 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../languages/c%23/xunit.html" class="md-nav__link">
+        XUnit and FluentAssertions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_9_1_13" type="checkbox" id="__nav_4_9_1_13" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_9_1_14" type="checkbox" id="__nav_4_9_1_14" >
       
-      <label class="md-nav__link" for="__nav_4_9_1_13">
+      <label class="md-nav__link" for="__nav_4_9_1_14">
         Linq
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Linq" data-md-level="4">
-        <label class="md-nav__title" for="__nav_4_9_1_13">
+        <label class="md-nav__title" for="__nav_4_9_1_14">
           <span class="md-nav__icon md-icon"></span>
           Linq
         </label>
@@ -2106,7 +2118,7 @@
                 
                 <h1 id="dependency-inversion-principle-dip">Dependency Inversion Principle [DIP]</h1>
 <p>High level modules <em>(e.g. business logic)</em> should not depends on low level modules <em>(e.g. infrastructure)</em>.  Both should depend on <strong>ABSTRACTIONS</strong></p>
-<p><strong>DETAILS</strong> should depend on ABSTRACTIONS.
+<p><strong>DETAILS</strong> should depend on ABSTRACTIONS.<br />
 <strong>ABSTRACTIONS</strong> should not depend on DETAILS.  </p>
 <h2 id="dependencies">Dependencies</h2>
 <p>references required to compile or run (e.g. reflection)</p>
@@ -2144,7 +2156,7 @@
 <h2 id="explicit-dependency-principle">Explicit Dependency Principle</h2>
 <p>Your classes shouldn't have hidden dependencies in them.  List your classes dependencies upfront, in the constructor.  Think of them like the ingredients in a recipe - it's best if you know exactly what you need, before you start!</p>
 <h3 id="dependency-injection-di">Dependency Injection [DI]</h3>
-<p>You don't create your own dependencies, it's the client's job to inject them into your class. (and naturally your class so declare it's dependencies as abstractions)</p>
+<p>You don't create your own dependencies, it's the client's job to inject them into your class. (and naturally your class should declare its dependencies as abstractions)</p>
 <p>Dependencies can be injected as:-</p>
 <ul>
 <li>constructor arguments (preferred method)</li>
